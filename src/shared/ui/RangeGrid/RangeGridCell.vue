@@ -128,7 +128,9 @@ function getDefaultCellBackground(label: string): string {
 
 .range-cell--error::after {
   inset: 0;
-  border-width: 2px;
-  border-color: #ff4444;
+  border-width: 3px;
+  border-color: #ffffff;
+  /* Dark inner shadow creates separation between white border and any fill color */
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 55%);
 }
 </style>
