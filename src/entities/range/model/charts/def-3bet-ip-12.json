@@ -1,0 +1,82 @@
+{
+  "id": "def-3bet-ip-12",
+  "title": "IP vs 3bet 12%",
+  "position": "IP",
+  "situation": "Defense vs 3Bet IP",
+  "sourcePage": "GreenCharts2024_01-10.pdf",
+  "actions": [
+    {
+      "id": "call_3bet",
+      "label": "Колл 3-бета",
+      "color": "#2e7d32"
+    },
+    {
+      "id": "fourbet_fold_5bet",
+      "label": "4-бет, фолд на 5-бет",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "fourbet_call_5bet",
+      "label": "4-бет, колл 5-бет пуша",
+      "color": "#7b1fa2"
+    }
+  ],
+  "solution": {
+    "AA": [
+      "fourbet_call_5bet"
+    ],
+    "A9s": [
+      "call_3bet",
+      "fourbet_fold_5bet"
+    ],
+    "AKo": [
+      "fourbet_call_5bet"
+    ],
+    "KK": [
+      "fourbet_call_5bet"
+    ],
+    "KQs": [
+      "call_3bet"
+    ],
+    "KJs": [
+      "call_3bet"
+    ],
+    "KTs": [
+      "call_3bet"
+    ],
+    "K9s": [
+      "call_3bet",
+      "fourbet_fold_5bet"
+    ],
+    "A3o": [
+      "fourbet_call_5bet"
+    ],
+    "K3o": [
+      "fourbet_call_5bet"
+    ],
+    "43o": [
+      "call_3bet"
+    ],
+    "A2o": [
+      "fourbet_call_5bet"
+    ],
+    "K2o": [
+      "fourbet_call_5bet"
+    ],
+    "J2o": [
+      "call_3bet"
+    ],
+    "82o": [
+      "call_3bet"
+    ],
+    "62o": [
+      "call_3bet"
+    ],
+    "52o": [
+      "fourbet_fold_5bet"
+    ],
+    "32o": [
+      "fourbet_fold_5bet"
+    ]
+  }
+}

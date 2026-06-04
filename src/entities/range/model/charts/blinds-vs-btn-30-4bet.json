@@ -1,0 +1,80 @@
+{
+  "id": "blinds-vs-btn-30-4bet",
+  "title": "SB|BB vs BU (3bb)",
+  "position": "SB",
+  "situation": "Blinds Defense vs 4bet",
+  "sourcePage": "GreenCharts2024_01-8.pdf",
+  "actions": [
+    {
+      "id": "fivebet_push",
+      "label": "5-бет пуш",
+      "color": "#7b1fa2"
+    },
+    {
+      "id": "call",
+      "label": "Колл 4-бета",
+      "color": "#2e7d32"
+    },
+    {
+      "id": "call_situational",
+      "label": "Колл ситуационно",
+      "color": "#f9a825"
+    }
+  ],
+  "solution": {
+    "99": [
+      "fivebet_push"
+    ],
+    "AA": [
+      "fivebet_push"
+    ],
+    "AKs": [
+      "fivebet_push"
+    ],
+    "AKo": [
+      "fivebet_push"
+    ],
+    "KK": [
+      "fivebet_push"
+    ],
+    "QQ": [
+      "fivebet_push"
+    ],
+    "JJ": [
+      "fivebet_push"
+    ],
+    "TT": [
+      "fivebet_push"
+    ],
+    "A5s": [
+      "fivebet_push"
+    ],
+    "AQs": [
+      "call"
+    ],
+    "AJs": [
+      "call"
+    ],
+    "KQs": [
+      "call"
+    ],
+    "KJs": [
+      "call"
+    ],
+    "QJs": [
+      "call"
+    ],
+    "ATs": [
+      "call_situational"
+    ],
+    "KTs": [
+      "call_situational"
+    ],
+    "QTs": [
+      "call_situational"
+    ],
+    "JTs": [
+      "call_situational"
+    ]
+  }
+}

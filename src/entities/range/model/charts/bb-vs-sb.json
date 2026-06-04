@@ -1,0 +1,522 @@
+{
+  "id": "bb-vs-sb",
+  "title": "BB vs SB",
+  "position": "BB",
+  "situation": "Big Blind Defense",
+  "sourcePage": "GreenCharts2024_01-7.pdf",
+  "actions": [
+    {
+      "id": "threebet",
+      "label": "3-бет",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "call",
+      "label": "Колл",
+      "color": "#2e7d32"
+    }
+  ],
+  "solution": {
+    "22": [
+      "threebet"
+    ],
+    "33": [
+      "call"
+    ],
+    "44": [
+      "call"
+    ],
+    "55": [
+      "call"
+    ],
+    "66": [
+      "call"
+    ],
+    "77": [
+      "call"
+    ],
+    "88": [
+      "threebet"
+    ],
+    "99": [
+      "threebet"
+    ],
+    "AA": [
+      "threebet"
+    ],
+    "KK": [
+      "threebet"
+    ],
+    "QQ": [
+      "threebet"
+    ],
+    "JJ": [
+      "threebet"
+    ],
+    "TT": [
+      "threebet"
+    ],
+    "AKs": [
+      "threebet"
+    ],
+    "AQs": [
+      "threebet"
+    ],
+    "AJs": [
+      "threebet"
+    ],
+    "ATs": [
+      "threebet"
+    ],
+    "A9s": [
+      "threebet"
+    ],
+    "A8s": [
+      "threebet"
+    ],
+    "A7s": [
+      "threebet"
+    ],
+    "A6s": [
+      "threebet"
+    ],
+    "A5s": [
+      "threebet"
+    ],
+    "A4s": [
+      "threebet"
+    ],
+    "A3s": [
+      "threebet"
+    ],
+    "A2s": [
+      "threebet"
+    ],
+    "KQs": [
+      "threebet"
+    ],
+    "KJs": [
+      "threebet"
+    ],
+    "KTs": [
+      "threebet"
+    ],
+    "K9s": [
+      "threebet"
+    ],
+    "K8s": [
+      "threebet"
+    ],
+    "QJs": [
+      "threebet"
+    ],
+    "QTs": [
+      "threebet"
+    ],
+    "Q9s": [
+      "threebet"
+    ],
+    "JTs": [
+      "threebet"
+    ],
+    "J9s": [
+      "threebet"
+    ],
+    "T9s": [
+      "threebet"
+    ],
+    "T8s": [
+      "threebet"
+    ],
+    "98s": [
+      "threebet"
+    ],
+    "97s": [
+      "threebet"
+    ],
+    "87s": [
+      "threebet"
+    ],
+    "86s": [
+      "threebet"
+    ],
+    "76s": [
+      "threebet"
+    ],
+    "75s": [
+      "threebet"
+    ],
+    "65s": [
+      "threebet"
+    ],
+    "64s": [
+      "threebet"
+    ],
+    "54s": [
+      "threebet"
+    ],
+    "AKo": [
+      "threebet"
+    ],
+    "AQo": [
+      "threebet"
+    ],
+    "AJo": [
+      "threebet"
+    ],
+    "ATo": [
+      "threebet"
+    ],
+    "A9o": [
+      "threebet"
+    ],
+    "A8o": [
+      "threebet"
+    ],
+    "A7o": [
+      "threebet"
+    ],
+    "KQo": [
+      "threebet"
+    ],
+    "KJo": [
+      "threebet"
+    ],
+    "KTo": [
+      "threebet"
+    ],
+    "QJo": [
+      "threebet"
+    ],
+    "QTo": [
+      "threebet"
+    ],
+    "JTo": [
+      "threebet"
+    ],
+    "K7s": [
+      "call"
+    ],
+    "K6s": [
+      "call"
+    ],
+    "K5s": [
+      "call"
+    ],
+    "K4s": [
+      "call"
+    ],
+    "K3s": [
+      "call"
+    ],
+    "K2s": [
+      "call"
+    ],
+    "Q8s": [
+      "call"
+    ],
+    "Q7s": [
+      "call"
+    ],
+    "Q6s": [
+      "call"
+    ],
+    "Q5s": [
+      "call"
+    ],
+    "Q4s": [
+      "call"
+    ],
+    "Q3s": [
+      "call"
+    ],
+    "Q2s": [
+      "call"
+    ],
+    "J8s": [
+      "call"
+    ],
+    "J7s": [
+      "call"
+    ],
+    "J6s": [
+      "call"
+    ],
+    "J5s": [
+      "call"
+    ],
+    "J4s": [
+      "call"
+    ],
+    "J3s": [
+      "call"
+    ],
+    "J2s": [
+      "call"
+    ],
+    "T7s": [
+      "call"
+    ],
+    "T6s": [
+      "call"
+    ],
+    "T5s": [
+      "call"
+    ],
+    "T4s": [
+      "call"
+    ],
+    "T3s": [
+      "call"
+    ],
+    "T2s": [
+      "call"
+    ],
+    "96s": [
+      "call"
+    ],
+    "95s": [
+      "call"
+    ],
+    "94s": [
+      "call"
+    ],
+    "93s": [
+      "call"
+    ],
+    "92s": [
+      "call"
+    ],
+    "85s": [
+      "call"
+    ],
+    "84s": [
+      "call"
+    ],
+    "83s": [
+      "call"
+    ],
+    "82s": [
+      "call"
+    ],
+    "74s": [
+      "call"
+    ],
+    "73s": [
+      "call"
+    ],
+    "72s": [
+      "call"
+    ],
+    "63s": [
+      "call"
+    ],
+    "62s": [
+      "call"
+    ],
+    "53s": [
+      "call"
+    ],
+    "52s": [
+      "call"
+    ],
+    "43s": [
+      "call"
+    ],
+    "42s": [
+      "call"
+    ],
+    "32s": [
+      "call"
+    ],
+    "A6o": [
+      "call"
+    ],
+    "A5o": [
+      "call"
+    ],
+    "A4o": [
+      "call"
+    ],
+    "A3o": [
+      "call"
+    ],
+    "A2o": [
+      "call"
+    ],
+    "K9o": [
+      "call"
+    ],
+    "K8o": [
+      "call"
+    ],
+    "K7o": [
+      "call"
+    ],
+    "K6o": [
+      "call"
+    ],
+    "K5o": [
+      "call"
+    ],
+    "K4o": [
+      "call"
+    ],
+    "K3o": [
+      "call"
+    ],
+    "K2o": [
+      "call"
+    ],
+    "Q9o": [
+      "call"
+    ],
+    "Q8o": [
+      "call"
+    ],
+    "Q7o": [
+      "call"
+    ],
+    "Q6o": [
+      "call"
+    ],
+    "Q5o": [
+      "call"
+    ],
+    "Q4o": [
+      "call"
+    ],
+    "Q3o": [
+      "call"
+    ],
+    "Q2o": [
+      "call"
+    ],
+    "J9o": [
+      "call"
+    ],
+    "J8o": [
+      "call"
+    ],
+    "J7o": [
+      "call"
+    ],
+    "J6o": [
+      "call"
+    ],
+    "J5o": [
+      "call"
+    ],
+    "J4o": [
+      "call"
+    ],
+    "J3o": [
+      "call"
+    ],
+    "J2o": [
+      "call"
+    ],
+    "T9o": [
+      "call"
+    ],
+    "T8o": [
+      "call"
+    ],
+    "T7o": [
+      "call"
+    ],
+    "T6o": [
+      "call"
+    ],
+    "T5o": [
+      "call"
+    ],
+    "T4o": [
+      "call"
+    ],
+    "T3o": [
+      "call"
+    ],
+    "T2o": [
+      "call"
+    ],
+    "98o": [
+      "call"
+    ],
+    "97o": [
+      "call"
+    ],
+    "96o": [
+      "call"
+    ],
+    "95o": [
+      "call"
+    ],
+    "94o": [
+      "call"
+    ],
+    "93o": [
+      "call"
+    ],
+    "92o": [
+      "call"
+    ],
+    "87o": [
+      "call"
+    ],
+    "86o": [
+      "call"
+    ],
+    "85o": [
+      "call"
+    ],
+    "84o": [
+      "call"
+    ],
+    "83o": [
+      "call"
+    ],
+    "82o": [
+      "call"
+    ],
+    "76o": [
+      "call"
+    ],
+    "75o": [
+      "call"
+    ],
+    "74o": [
+      "call"
+    ],
+    "73o": [
+      "call"
+    ],
+    "72o": [
+      "call"
+    ],
+    "65o": [
+      "call"
+    ],
+    "64o": [
+      "call"
+    ],
+    "63o": [
+      "call"
+    ],
+    "62o": [
+      "call"
+    ],
+    "54o": [
+      "call"
+    ],
+    "53o": [
+      "call"
+    ],
+    "52o": [
+      "call"
+    ],
+    "43o": [
+      "call"
+    ]
+  }
+}

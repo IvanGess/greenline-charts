@@ -1,0 +1,137 @@
+{
+  "id": "def-3bet-ip-14",
+  "title": "IP vs 3bet 14%",
+  "position": "IP",
+  "situation": "Defense vs 3Bet IP",
+  "sourcePage": "GreenCharts2024_01-10.pdf",
+  "actions": [
+    {
+      "id": "call_3bet",
+      "label": "Колл 3-бета",
+      "color": "#2e7d32"
+    },
+    {
+      "id": "fourbet_fold_5bet",
+      "label": "4-бет, фолд на 5-бет",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "fourbet_call_5bet",
+      "label": "4-бет, колл 5-бет пуша",
+      "color": "#7b1fa2"
+    },
+    {
+      "id": "fold",
+      "label": "Фолд",
+      "color": "#9aa3a0"
+    }
+  ],
+  "solution": {
+    "66": [
+      "call_3bet"
+    ],
+    "77": [
+      "call_3bet"
+    ],
+    "88": [
+      "call_3bet"
+    ],
+    "99": [
+      "call_3bet"
+    ],
+    "AA": [
+      "fourbet_call_5bet"
+    ],
+    "KK": [
+      "fourbet_call_5bet"
+    ],
+    "AKs": [
+      "fourbet_call_5bet"
+    ],
+    "AKo": [
+      "fourbet_fold_5bet"
+    ],
+    "A5s": [
+      "fourbet_fold_5bet",
+      "fold"
+    ],
+    "A4s": [
+      "fourbet_fold_5bet",
+      "fold"
+    ],
+    "A3s": [
+      "fourbet_fold_5bet",
+      "fold"
+    ],
+    "A2s": [
+      "fourbet_fold_5bet",
+      "fold"
+    ],
+    "QQ": [
+      "call_3bet"
+    ],
+    "JJ": [
+      "call_3bet"
+    ],
+    "TT": [
+      "call_3bet"
+    ],
+    "AQs": [
+      "call_3bet"
+    ],
+    "AJs": [
+      "call_3bet"
+    ],
+    "KQs": [
+      "call_3bet"
+    ],
+    "A9s": [
+      "call_3bet",
+      "fold"
+    ],
+    "A8s": [
+      "call_3bet",
+      "fold"
+    ],
+    "A7s": [
+      "call_3bet",
+      "fold"
+    ],
+    "A6s": [
+      "call_3bet",
+      "fold"
+    ],
+    "KJs": [
+      "call_3bet",
+      "fold"
+    ],
+    "QJs": [
+      "call_3bet",
+      "fold"
+    ],
+    "T9s": [
+      "call_3bet",
+      "fold"
+    ],
+    "98s": [
+      "call_3bet",
+      "fold"
+    ],
+    "87s": [
+      "call_3bet",
+      "fold"
+    ],
+    "76s": [
+      "call_3bet",
+      "fold"
+    ],
+    "65s": [
+      "call_3bet",
+      "fold"
+    ],
+    "54s": [
+      "call_3bet",
+      "fold"
+    ]
+  }
+}

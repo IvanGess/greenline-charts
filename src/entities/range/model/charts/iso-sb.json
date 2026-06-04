@@ -1,0 +1,306 @@
+{
+  "id": "iso-sb",
+  "title": "ISO — SB (12%)",
+  "position": "SB",
+  "situation": "Isolate (ISO)",
+  "sourcePage": "GreenCharts2024_01-5.pdf",
+  "actions": [
+    {
+      "id": "iso",
+      "label": "Изолейт",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "complete",
+      "label": "доставляем 0,5bb",
+      "color": "#2e7d32"
+    }
+  ],
+  "solution": {
+    "22": [
+      "complete"
+    ],
+    "33": [
+      "complete"
+    ],
+    "44": [
+      "complete"
+    ],
+    "55": [
+      "complete"
+    ],
+    "66": [
+      "complete"
+    ],
+    "77": [
+      "complete"
+    ],
+    "88": [
+      "iso"
+    ],
+    "99": [
+      "iso"
+    ],
+    "AA": [
+      "iso"
+    ],
+    "KK": [
+      "iso"
+    ],
+    "QQ": [
+      "iso"
+    ],
+    "JJ": [
+      "iso"
+    ],
+    "TT": [
+      "iso"
+    ],
+    "AKs": [
+      "iso"
+    ],
+    "AQs": [
+      "iso"
+    ],
+    "AJs": [
+      "iso"
+    ],
+    "ATs": [
+      "iso"
+    ],
+    "A9s": [
+      "iso"
+    ],
+    "KQs": [
+      "iso"
+    ],
+    "KJs": [
+      "iso"
+    ],
+    "QJs": [
+      "iso"
+    ],
+    "AKo": [
+      "iso"
+    ],
+    "AQo": [
+      "iso"
+    ],
+    "AJo": [
+      "iso"
+    ],
+    "KQo": [
+      "iso"
+    ],
+    "A8s": [
+      "complete"
+    ],
+    "A7s": [
+      "complete"
+    ],
+    "A6s": [
+      "complete"
+    ],
+    "A5s": [
+      "complete"
+    ],
+    "A4s": [
+      "complete"
+    ],
+    "A3s": [
+      "complete"
+    ],
+    "A2s": [
+      "complete"
+    ],
+    "KTs": [
+      "complete"
+    ],
+    "K9s": [
+      "complete"
+    ],
+    "K8s": [
+      "complete"
+    ],
+    "K7s": [
+      "complete"
+    ],
+    "K6s": [
+      "complete"
+    ],
+    "K5s": [
+      "complete"
+    ],
+    "K4s": [
+      "complete"
+    ],
+    "K3s": [
+      "complete"
+    ],
+    "K2s": [
+      "complete"
+    ],
+    "QTs": [
+      "complete"
+    ],
+    "Q9s": [
+      "complete"
+    ],
+    "Q8s": [
+      "complete"
+    ],
+    "Q7s": [
+      "complete"
+    ],
+    "Q6s": [
+      "complete"
+    ],
+    "Q5s": [
+      "complete"
+    ],
+    "Q4s": [
+      "complete"
+    ],
+    "Q3s": [
+      "complete"
+    ],
+    "Q2s": [
+      "complete"
+    ],
+    "JTs": [
+      "complete"
+    ],
+    "J9s": [
+      "complete"
+    ],
+    "J8s": [
+      "complete"
+    ],
+    "J7s": [
+      "complete"
+    ],
+    "J6s": [
+      "complete"
+    ],
+    "J5s": [
+      "complete"
+    ],
+    "J4s": [
+      "complete"
+    ],
+    "J3s": [
+      "complete"
+    ],
+    "J2s": [
+      "complete"
+    ],
+    "T9s": [
+      "complete"
+    ],
+    "T8s": [
+      "complete"
+    ],
+    "T7s": [
+      "complete"
+    ],
+    "T6s": [
+      "complete"
+    ],
+    "T5s": [
+      "complete"
+    ],
+    "T4s": [
+      "complete"
+    ],
+    "T3s": [
+      "complete"
+    ],
+    "T2s": [
+      "complete"
+    ],
+    "98s": [
+      "complete"
+    ],
+    "97s": [
+      "complete"
+    ],
+    "96s": [
+      "complete"
+    ],
+    "95s": [
+      "complete"
+    ],
+    "94s": [
+      "complete"
+    ],
+    "93s": [
+      "complete"
+    ],
+    "92s": [
+      "complete"
+    ],
+    "87s": [
+      "complete"
+    ],
+    "86s": [
+      "complete"
+    ],
+    "85s": [
+      "complete"
+    ],
+    "84s": [
+      "complete"
+    ],
+    "83s": [
+      "complete"
+    ],
+    "82s": [
+      "complete"
+    ],
+    "76s": [
+      "complete"
+    ],
+    "75s": [
+      "complete"
+    ],
+    "74s": [
+      "complete"
+    ],
+    "73s": [
+      "complete"
+    ],
+    "72s": [
+      "complete"
+    ],
+    "65s": [
+      "complete"
+    ],
+    "64s": [
+      "complete"
+    ],
+    "63s": [
+      "complete"
+    ],
+    "62s": [
+      "complete"
+    ],
+    "54s": [
+      "complete"
+    ],
+    "53s": [
+      "complete"
+    ],
+    "52s": [
+      "complete"
+    ],
+    "43s": [
+      "complete"
+    ],
+    "42s": [
+      "complete"
+    ],
+    "32s": [
+      "complete"
+    ]
+  }
+}

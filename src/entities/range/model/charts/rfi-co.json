@@ -1,0 +1,264 @@
+{
+  "id": "rfi-co",
+  "title": "RFI — CO (26%)",
+  "position": "CO",
+  "situation": "Open Raise (RFI)",
+  "sourcePage": "GreenCharts2024_01-4.pdf",
+  "actions": [
+    {
+      "id": "raise",
+      "label": "Открываем всегда",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "raise_situational",
+      "label": "Открываем в подходящих ситуациях",
+      "color": "#f9a825"
+    }
+  ],
+  "solution": {
+    "22": [
+      "raise_situational"
+    ],
+    "33": [
+      "raise_situational"
+    ],
+    "44": [
+      "raise"
+    ],
+    "55": [
+      "raise"
+    ],
+    "66": [
+      "raise"
+    ],
+    "77": [
+      "raise"
+    ],
+    "88": [
+      "raise"
+    ],
+    "99": [
+      "raise"
+    ],
+    "AA": [
+      "raise"
+    ],
+    "KK": [
+      "raise"
+    ],
+    "QQ": [
+      "raise"
+    ],
+    "JJ": [
+      "raise"
+    ],
+    "TT": [
+      "raise"
+    ],
+    "A2s": [
+      "raise"
+    ],
+    "A3s": [
+      "raise"
+    ],
+    "A4s": [
+      "raise"
+    ],
+    "A5s": [
+      "raise"
+    ],
+    "A6s": [
+      "raise"
+    ],
+    "A7s": [
+      "raise"
+    ],
+    "A8s": [
+      "raise"
+    ],
+    "A9s": [
+      "raise"
+    ],
+    "ATs": [
+      "raise"
+    ],
+    "AJs": [
+      "raise"
+    ],
+    "AQs": [
+      "raise"
+    ],
+    "AKs": [
+      "raise"
+    ],
+    "K5s": [
+      "raise"
+    ],
+    "K6s": [
+      "raise"
+    ],
+    "K7s": [
+      "raise"
+    ],
+    "K8s": [
+      "raise"
+    ],
+    "K9s": [
+      "raise"
+    ],
+    "KTs": [
+      "raise"
+    ],
+    "KJs": [
+      "raise"
+    ],
+    "KQs": [
+      "raise"
+    ],
+    "Q8s": [
+      "raise"
+    ],
+    "Q9s": [
+      "raise"
+    ],
+    "QTs": [
+      "raise"
+    ],
+    "QJs": [
+      "raise"
+    ],
+    "J8s": [
+      "raise"
+    ],
+    "J9s": [
+      "raise"
+    ],
+    "JTs": [
+      "raise"
+    ],
+    "T8s": [
+      "raise"
+    ],
+    "T9s": [
+      "raise"
+    ],
+    "97s": [
+      "raise"
+    ],
+    "98s": [
+      "raise"
+    ],
+    "87s": [
+      "raise"
+    ],
+    "76s": [
+      "raise"
+    ],
+    "65s": [
+      "raise"
+    ],
+    "A9o": [
+      "raise"
+    ],
+    "ATo": [
+      "raise"
+    ],
+    "AJo": [
+      "raise"
+    ],
+    "AQo": [
+      "raise"
+    ],
+    "AKo": [
+      "raise"
+    ],
+    "KTo": [
+      "raise"
+    ],
+    "KJo": [
+      "raise"
+    ],
+    "KQo": [
+      "raise"
+    ],
+    "QTo": [
+      "raise"
+    ],
+    "QJo": [
+      "raise"
+    ],
+    "JTo": [
+      "raise"
+    ],
+    "K4s": [
+      "raise_situational"
+    ],
+    "K3s": [
+      "raise_situational"
+    ],
+    "K2s": [
+      "raise_situational"
+    ],
+    "Q7s": [
+      "raise_situational"
+    ],
+    "Q6s": [
+      "raise_situational"
+    ],
+    "Q5s": [
+      "raise_situational"
+    ],
+    "J7s": [
+      "raise_situational"
+    ],
+    "T7s": [
+      "raise_situational"
+    ],
+    "96s": [
+      "raise_situational"
+    ],
+    "86s": [
+      "raise_situational"
+    ],
+    "75s": [
+      "raise_situational"
+    ],
+    "64s": [
+      "raise_situational"
+    ],
+    "54s": [
+      "raise_situational"
+    ],
+    "A8o": [
+      "raise_situational"
+    ],
+    "A7o": [
+      "raise_situational"
+    ],
+    "A6o": [
+      "raise_situational"
+    ],
+    "A5o": [
+      "raise_situational"
+    ],
+    "A4o": [
+      "raise_situational"
+    ],
+    "A3o": [
+      "raise_situational"
+    ],
+    "A2o": [
+      "raise_situational"
+    ],
+    "K9o": [
+      "raise_situational"
+    ],
+    "Q9o": [
+      "raise_situational"
+    ],
+    "J9o": [
+      "raise_situational"
+    ]
+  }
+}

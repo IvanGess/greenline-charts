@@ -1,0 +1,37 @@
+---
+description: Vue 3 + TS + PrimeVue + FSD senior cookbook
+alwaysApply: true
+---
+
+# Greenline Charts — conventions
+
+Follow `docs/COOKBOOK.md` in full. Summary for every change:
+
+## FSD
+
+- Layers: app → pages → widgets → features → entities → shared. Import only downward.
+- No cross-imports between slices on the same layer. Export slices only via root `index.ts`.
+- Slice folders: `ui/`, `model/`, `api/` as needed.
+
+## Vue SFC block order
+
+1. `template`
+2. `script setup lang="ts"`
+3. `style scoped`
+
+## Styles
+
+- Global tokens/reset: `@shared/styles`. Use CSS variables in components.
+- Reusable layout/UI → `@shared/ui`. No duplicate layout CSS across pages.
+- PrimeVue theme only in `@app/providers`; import Prime components individually.
+
+## Components
+
+- `shared/ui`: presentational, props/emits/slots only, no API calls.
+- pages/widgets/features/entities: smart composition and domain logic.
+- `defineOptions({ name })` matches file name. Typed props/emits. No `any`.
+- DRY: extract composables and shared UI before copying code.
+
+## Aliases
+
+Use `@app`, `@pages`, `@widgets`, `@features`, `@entities`, `@shared` — not deep relative paths across layers.

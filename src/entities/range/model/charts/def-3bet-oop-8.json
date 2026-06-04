@@ -1,0 +1,84 @@
+{
+  "id": "def-3bet-oop-8",
+  "title": "OOP vs 3bet 8%",
+  "position": "OOP",
+  "situation": "Defense vs 3Bet OOP",
+  "sourcePage": "GreenCharts2024_01-11.pdf",
+  "actions": [
+    {
+      "id": "call_3bet",
+      "label": "Колл 3-бета",
+      "color": "#2e7d32"
+    },
+    {
+      "id": "fourbet_fold_5bet",
+      "label": "4-бет, фолд на 5-бет",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "fourbet_call_5bet",
+      "label": "4-бет, колл 5-бет пуша",
+      "color": "#7b1fa2"
+    }
+  ],
+  "solution": {
+    "AKs": [
+      "fourbet_call_5bet"
+    ],
+    "AQs": [
+      "fourbet_call_5bet"
+    ],
+    "ATs": [
+      "fourbet_fold_5bet"
+    ],
+    "A9s": [
+      "fourbet_fold_5bet"
+    ],
+    "KK": [
+      "fourbet_fold_5bet"
+    ],
+    "KQs": [
+      "call_3bet",
+      "fourbet_call_5bet"
+    ],
+    "KJs": [
+      "fourbet_fold_5bet"
+    ],
+    "KTs": [
+      "fourbet_fold_5bet"
+    ],
+    "KQo": [
+      "fourbet_fold_5bet"
+    ],
+    "QJs": [
+      "fourbet_call_5bet"
+    ],
+    "JTs": [
+      "fourbet_fold_5bet"
+    ],
+    "J9s": [
+      "fourbet_fold_5bet"
+    ],
+    "K3o": [
+      "fourbet_call_5bet"
+    ],
+    "Q3o": [
+      "fourbet_call_5bet"
+    ],
+    "93o": [
+      "fourbet_fold_5bet"
+    ],
+    "K2o": [
+      "fourbet_call_5bet"
+    ],
+    "Q2o": [
+      "fourbet_call_5bet"
+    ],
+    "T2o": [
+      "fourbet_fold_5bet"
+    ],
+    "92o": [
+      "fourbet_fold_5bet"
+    ]
+  }
+}

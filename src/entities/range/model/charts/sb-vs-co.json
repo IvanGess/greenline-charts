@@ -1,0 +1,96 @@
+{
+  "id": "sb-vs-co",
+  "title": "SB vs CO",
+  "position": "SB",
+  "situation": "Small Blind Defense",
+  "sourcePage": "GreenCharts2024_01-6.pdf",
+  "actions": [
+    {
+      "id": "threebet",
+      "label": "3-бет всегда",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "threebet_situational",
+      "label": "3-бет ситуационно",
+      "color": "#f9a825"
+    }
+  ],
+  "solution": {
+    "77": [
+      "threebet_situational"
+    ],
+    "88": [
+      "threebet_situational"
+    ],
+    "99": [
+      "threebet"
+    ],
+    "AA": [
+      "threebet"
+    ],
+    "KK": [
+      "threebet"
+    ],
+    "QQ": [
+      "threebet"
+    ],
+    "JJ": [
+      "threebet"
+    ],
+    "TT": [
+      "threebet"
+    ],
+    "AKs": [
+      "threebet"
+    ],
+    "AQs": [
+      "threebet"
+    ],
+    "AJs": [
+      "threebet"
+    ],
+    "ATs": [
+      "threebet"
+    ],
+    "KQs": [
+      "threebet"
+    ],
+    "KJs": [
+      "threebet"
+    ],
+    "QJs": [
+      "threebet"
+    ],
+    "JTs": [
+      "threebet"
+    ],
+    "AKo": [
+      "threebet"
+    ],
+    "AQo": [
+      "threebet"
+    ],
+    "AJo": [
+      "threebet"
+    ],
+    "A9s": [
+      "threebet_situational"
+    ],
+    "A5s": [
+      "threebet_situational"
+    ],
+    "A4s": [
+      "threebet_situational"
+    ],
+    "A3s": [
+      "threebet_situational"
+    ],
+    "KTs": [
+      "threebet_situational"
+    ],
+    "KJo": [
+      "threebet_situational"
+    ]
+  }
+}

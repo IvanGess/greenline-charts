@@ -1,0 +1,90 @@
+{
+  "id": "iso-mp",
+  "title": "ISO — MP (11%)",
+  "position": "MP",
+  "situation": "Isolate (ISO)",
+  "sourcePage": "GreenCharts2024_01-5.pdf",
+  "actions": [
+    {
+      "id": "iso",
+      "label": "Изолейт",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "complete",
+      "label": "доставляем 0,5bb",
+      "color": "#2e7d32"
+    }
+  ],
+  "solution": {
+    "77": [
+      "iso"
+    ],
+    "88": [
+      "iso"
+    ],
+    "99": [
+      "iso"
+    ],
+    "AA": [
+      "iso"
+    ],
+    "KK": [
+      "iso"
+    ],
+    "QQ": [
+      "iso"
+    ],
+    "JJ": [
+      "iso"
+    ],
+    "TT": [
+      "iso"
+    ],
+    "AKs": [
+      "iso"
+    ],
+    "AQs": [
+      "iso"
+    ],
+    "AJs": [
+      "iso"
+    ],
+    "ATs": [
+      "iso"
+    ],
+    "A9s": [
+      "iso"
+    ],
+    "KQs": [
+      "iso"
+    ],
+    "KJs": [
+      "iso"
+    ],
+    "KTs": [
+      "iso"
+    ],
+    "QJs": [
+      "iso"
+    ],
+    "QTs": [
+      "iso"
+    ],
+    "JTs": [
+      "iso"
+    ],
+    "AKo": [
+      "iso"
+    ],
+    "AQo": [
+      "iso"
+    ],
+    "AJo": [
+      "iso"
+    ],
+    "KQo": [
+      "iso"
+    ]
+  }
+}

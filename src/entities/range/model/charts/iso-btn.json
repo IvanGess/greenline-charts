@@ -1,0 +1,201 @@
+{
+  "id": "iso-btn",
+  "title": "ISO — BU (20%)",
+  "position": "BTN",
+  "situation": "Isolate (ISO)",
+  "sourcePage": "GreenCharts2024_01-5.pdf",
+  "actions": [
+    {
+      "id": "iso",
+      "label": "Изолейт",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "complete",
+      "label": "доставляем 0,5bb",
+      "color": "#2e7d32"
+    }
+  ],
+  "solution": {
+    "55": [
+      "iso"
+    ],
+    "66": [
+      "iso"
+    ],
+    "77": [
+      "iso"
+    ],
+    "88": [
+      "iso"
+    ],
+    "99": [
+      "iso"
+    ],
+    "AA": [
+      "iso"
+    ],
+    "KK": [
+      "iso"
+    ],
+    "QQ": [
+      "iso"
+    ],
+    "JJ": [
+      "iso"
+    ],
+    "TT": [
+      "iso"
+    ],
+    "A2s": [
+      "iso"
+    ],
+    "A3s": [
+      "iso"
+    ],
+    "A4s": [
+      "iso"
+    ],
+    "A5s": [
+      "iso"
+    ],
+    "A6s": [
+      "iso"
+    ],
+    "A7s": [
+      "iso"
+    ],
+    "A8s": [
+      "iso"
+    ],
+    "A9s": [
+      "iso"
+    ],
+    "ATs": [
+      "iso"
+    ],
+    "AJs": [
+      "iso"
+    ],
+    "AQs": [
+      "iso"
+    ],
+    "AKs": [
+      "iso"
+    ],
+    "K2s": [
+      "iso"
+    ],
+    "K3s": [
+      "iso"
+    ],
+    "K4s": [
+      "iso"
+    ],
+    "K5s": [
+      "iso"
+    ],
+    "K6s": [
+      "iso"
+    ],
+    "K7s": [
+      "iso"
+    ],
+    "K8s": [
+      "iso"
+    ],
+    "K9s": [
+      "iso"
+    ],
+    "KTs": [
+      "iso"
+    ],
+    "KJs": [
+      "iso"
+    ],
+    "KQs": [
+      "iso"
+    ],
+    "QJs": [
+      "iso"
+    ],
+    "QTs": [
+      "iso"
+    ],
+    "Q9s": [
+      "iso"
+    ],
+    "Q8s": [
+      "iso"
+    ],
+    "JTs": [
+      "iso"
+    ],
+    "J9s": [
+      "iso"
+    ],
+    "J8s": [
+      "iso"
+    ],
+    "T9s": [
+      "iso"
+    ],
+    "T8s": [
+      "iso"
+    ],
+    "98s": [
+      "iso"
+    ],
+    "97s": [
+      "iso"
+    ],
+    "87s": [
+      "iso"
+    ],
+    "86s": [
+      "iso"
+    ],
+    "76s": [
+      "iso"
+    ],
+    "75s": [
+      "iso"
+    ],
+    "65s": [
+      "iso"
+    ],
+    "AKo": [
+      "iso"
+    ],
+    "AQo": [
+      "iso"
+    ],
+    "AJo": [
+      "iso"
+    ],
+    "ATo": [
+      "iso"
+    ],
+    "A9o": [
+      "iso"
+    ],
+    "KQo": [
+      "iso"
+    ],
+    "KJo": [
+      "iso"
+    ],
+    "KTo": [
+      "iso"
+    ],
+    "QJo": [
+      "iso"
+    ],
+    "QTo": [
+      "iso"
+    ],
+    "JTo": [
+      "iso"
+    ]
+  }
+}

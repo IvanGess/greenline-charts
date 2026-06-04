@@ -1,0 +1,100 @@
+{
+  "id": "3bet-ip-26",
+  "title": "3bet IP vs RFI 26%",
+  "position": "IP",
+  "situation": "3Bet IP",
+  "sourcePage": "GreenCharts2024_01-9.pdf",
+  "actions": [
+    {
+      "id": "fivebet_push",
+      "label": "5-бет пуш",
+      "color": "#7b1fa2"
+    },
+    {
+      "id": "threebet_fold_4bet",
+      "label": "3-бет, фолд на 4-бет",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "threebet_call_4bet",
+      "label": "3-бет, колл 4-бета ситуационно",
+      "color": "#f9a825"
+    },
+    {
+      "id": "threebet_call_4bet_situational",
+      "label": "3-бет, колл 4-бета",
+      "color": "#2e7d32"
+    }
+  ],
+  "solution": {
+    "77": [
+      "threebet_fold_4bet"
+    ],
+    "88": [
+      "threebet_fold_4bet"
+    ],
+    "99": [
+      "threebet_call_4bet"
+    ],
+    "AA": [
+      "fivebet_push"
+    ],
+    "KK": [
+      "fivebet_push"
+    ],
+    "AKs": [
+      "threebet_call_4bet"
+    ],
+    "AQs": [
+      "threebet_call_4bet"
+    ],
+    "AJs": [
+      "threebet_call_4bet"
+    ],
+    "ATs": [
+      "threebet_call_4bet"
+    ],
+    "AKo": [
+      "threebet_call_4bet"
+    ],
+    "QQ": [
+      "threebet_call_4bet"
+    ],
+    "KQs": [
+      "threebet_call_4bet"
+    ],
+    "KJs": [
+      "threebet_call_4bet"
+    ],
+    "KTs": [
+      "threebet_call_4bet"
+    ],
+    "A5s": [
+      "threebet_fold_4bet"
+    ],
+    "A4s": [
+      "threebet_fold_4bet"
+    ],
+    "QJs": [
+      "threebet_fold_4bet"
+    ],
+    "QTs": [
+      "threebet_fold_4bet"
+    ],
+    "JJ": [
+      "threebet_fold_4bet"
+    ],
+    "JTs": [
+      "threebet_fold_4bet"
+    ],
+    "TT": [
+      "threebet_fold_4bet"
+    ],
+    "76s": [
+      "threebet_fold_4bet"
+    ],
+    "AQo": [
+      "threebet_call_4bet_situational"
+    ]
+  }
+}

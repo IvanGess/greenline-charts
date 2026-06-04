@@ -1,0 +1,60 @@
+{
+  "id": "sb-vs-utg",
+  "title": "SB vs UTG",
+  "position": "SB",
+  "situation": "Small Blind Defense",
+  "sourcePage": "GreenCharts2024_01-6.pdf",
+  "actions": [
+    {
+      "id": "threebet",
+      "label": "3-бет всегда",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "threebet_situational",
+      "label": "3-бет ситуационно",
+      "color": "#f9a825"
+    }
+  ],
+  "solution": {
+    "99": [
+      "threebet_situational"
+    ],
+    "AA": [
+      "threebet"
+    ],
+    "KK": [
+      "threebet"
+    ],
+    "QQ": [
+      "threebet"
+    ],
+    "JJ": [
+      "threebet"
+    ],
+    "TT": [
+      "threebet"
+    ],
+    "AKs": [
+      "threebet"
+    ],
+    "AQs": [
+      "threebet"
+    ],
+    "AJs": [
+      "threebet"
+    ],
+    "AKo": [
+      "threebet"
+    ],
+    "ATs": [
+      "threebet_situational"
+    ],
+    "KQs": [
+      "threebet_situational"
+    ],
+    "KJs": [
+      "threebet_situational"
+    ]
+  }
+}

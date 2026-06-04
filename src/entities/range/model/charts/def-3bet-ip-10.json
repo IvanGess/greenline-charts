@@ -1,0 +1,38 @@
+{
+  "id": "def-3bet-ip-10",
+  "title": "IP vs 3bet 10%",
+  "position": "IP",
+  "situation": "Defense vs 3Bet IP",
+  "sourcePage": "GreenCharts2024_01-10.pdf",
+  "actions": [
+    {
+      "id": "call_3bet",
+      "label": "Колл 3-бета",
+      "color": "#2e7d32"
+    },
+    {
+      "id": "fourbet_fold_5bet",
+      "label": "4-бет, фолд на 5-бет",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "fourbet_call_5bet",
+      "label": "4-бет, колл 5-бет пуша",
+      "color": "#7b1fa2"
+    }
+  ],
+  "solution": {
+    "22": [
+      "fourbet_call_5bet"
+    ],
+    "A2s": [
+      "fourbet_call_5bet"
+    ],
+    "A3o": [
+      "fourbet_fold_5bet"
+    ],
+    "32s": [
+      "fourbet_call_5bet"
+    ]
+  }
+}

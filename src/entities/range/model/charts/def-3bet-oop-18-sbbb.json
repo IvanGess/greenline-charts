@@ -1,0 +1,39 @@
+{
+  "id": "def-3bet-oop-18-sbbb",
+  "title": "OOP vs 3bet 18% (SB vs BB)",
+  "position": "OOP",
+  "situation": "Defense vs 3Bet OOP",
+  "sourcePage": "GreenCharts2024_01-11.pdf",
+  "actions": [
+    {
+      "id": "call_3bet",
+      "label": "Колл 3-бета",
+      "color": "#2e7d32"
+    },
+    {
+      "id": "fourbet_fold_5bet",
+      "label": "4-бет, фолд на 5-бет",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "fourbet_call_5bet",
+      "label": "4-бет, колл 5-бет пуша",
+      "color": "#7b1fa2"
+    }
+  ],
+  "solution": {
+    "AA": [
+      "fourbet_fold_5bet"
+    ],
+    "AQs": [
+      "fourbet_call_5bet"
+    ],
+    "AJs": [
+      "call_3bet",
+      "fourbet_call_5bet"
+    ],
+    "ATs": [
+      "call_3bet"
+    ]
+  }
+}

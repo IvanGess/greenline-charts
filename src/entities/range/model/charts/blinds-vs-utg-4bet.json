@@ -1,0 +1,41 @@
+{
+  "id": "blinds-vs-utg-4bet",
+  "title": "SB|BB vs UTG",
+  "position": "SB",
+  "situation": "Blinds Defense vs 4bet",
+  "sourcePage": "GreenCharts2024_01-8.pdf",
+  "actions": [
+    {
+      "id": "fivebet_push",
+      "label": "5-бет пуш",
+      "color": "#7b1fa2"
+    },
+    {
+      "id": "call",
+      "label": "Колл 4-бета",
+      "color": "#2e7d32"
+    },
+    {
+      "id": "call_situational",
+      "label": "Колл ситуационно",
+      "color": "#f9a825"
+    }
+  ],
+  "solution": {
+    "AA": [
+      "fivebet_push"
+    ],
+    "AKs": [
+      "fivebet_push"
+    ],
+    "AQs": [
+      "fivebet_push"
+    ],
+    "AKo": [
+      "call"
+    ],
+    "KK": [
+      "call"
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "id": "iso-bb",
+  "title": "ISO — BB (14%)",
+  "position": "BB",
+  "situation": "Isolate (ISO)",
+  "sourcePage": "GreenCharts2024_01-5.pdf",
+  "actions": [
+    {
+      "id": "iso",
+      "label": "Изолейт",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "complete",
+      "label": "доставляем 0,5bb",
+      "color": "#2e7d32"
+    }
+  ],
+  "solution": {
+    "66": [
+      "iso"
+    ],
+    "77": [
+      "iso"
+    ],
+    "88": [
+      "iso"
+    ],
+    "99": [
+      "iso"
+    ],
+    "AA": [
+      "iso"
+    ],
+    "KK": [
+      "iso"
+    ],
+    "QQ": [
+      "iso"
+    ],
+    "JJ": [
+      "iso"
+    ],
+    "TT": [
+      "iso"
+    ],
+    "A2s": [
+      "iso"
+    ],
+    "A3s": [
+      "iso"
+    ],
+    "A4s": [
+      "iso"
+    ],
+    "A5s": [
+      "iso"
+    ],
+    "A6s": [
+      "iso"
+    ],
+    "A7s": [
+      "iso"
+    ],
+    "A8s": [
+      "iso"
+    ],
+    "A9s": [
+      "iso"
+    ],
+    "ATs": [
+      "iso"
+    ],
+    "AJs": [
+      "iso"
+    ],
+    "AQs": [
+      "iso"
+    ],
+    "AKs": [
+      "iso"
+    ],
+    "K9s": [
+      "iso"
+    ],
+    "KTs": [
+      "iso"
+    ],
+    "KJs": [
+      "iso"
+    ],
+    "KQs": [
+      "iso"
+    ],
+    "QJs": [
+      "iso"
+    ],
+    "QTs": [
+      "iso"
+    ],
+    "JTs": [
+      "iso"
+    ],
+    "J9s": [
+      "iso"
+    ],
+    "T9s": [
+      "iso"
+    ],
+    "98s": [
+      "iso"
+    ],
+    "87s": [
+      "iso"
+    ],
+    "76s": [
+      "iso"
+    ],
+    "AKo": [
+      "iso"
+    ],
+    "AQo": [
+      "iso"
+    ],
+    "AJo": [
+      "iso"
+    ],
+    "ATo": [
+      "iso"
+    ],
+    "KQo": [
+      "iso"
+    ],
+    "KJo": [
+      "iso"
+    ],
+    "QJo": [
+      "iso"
+    ]
+  }
+}

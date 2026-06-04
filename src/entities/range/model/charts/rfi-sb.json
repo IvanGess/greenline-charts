@@ -1,0 +1,438 @@
+{
+  "id": "rfi-sb",
+  "title": "RFI — SB (44%)",
+  "position": "SB",
+  "situation": "Open Raise (RFI)",
+  "sourcePage": "GreenCharts2024_01-4.pdf",
+  "actions": [
+    {
+      "id": "raise",
+      "label": "Открываем всегда",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "raise_situational",
+      "label": "Открываем в подходящих ситуациях",
+      "color": "#f9a825"
+    }
+  ],
+  "solution": {
+    "22": [
+      "raise"
+    ],
+    "33": [
+      "raise"
+    ],
+    "44": [
+      "raise"
+    ],
+    "55": [
+      "raise"
+    ],
+    "66": [
+      "raise"
+    ],
+    "77": [
+      "raise"
+    ],
+    "88": [
+      "raise"
+    ],
+    "99": [
+      "raise"
+    ],
+    "AA": [
+      "raise"
+    ],
+    "KK": [
+      "raise"
+    ],
+    "QQ": [
+      "raise"
+    ],
+    "JJ": [
+      "raise"
+    ],
+    "TT": [
+      "raise"
+    ],
+    "A2s": [
+      "raise"
+    ],
+    "A3s": [
+      "raise"
+    ],
+    "A4s": [
+      "raise"
+    ],
+    "A5s": [
+      "raise"
+    ],
+    "A6s": [
+      "raise"
+    ],
+    "A7s": [
+      "raise"
+    ],
+    "A8s": [
+      "raise"
+    ],
+    "A9s": [
+      "raise"
+    ],
+    "ATs": [
+      "raise"
+    ],
+    "AJs": [
+      "raise"
+    ],
+    "AQs": [
+      "raise"
+    ],
+    "AKs": [
+      "raise"
+    ],
+    "K2s": [
+      "raise"
+    ],
+    "K3s": [
+      "raise"
+    ],
+    "K4s": [
+      "raise"
+    ],
+    "K5s": [
+      "raise"
+    ],
+    "K6s": [
+      "raise"
+    ],
+    "K7s": [
+      "raise"
+    ],
+    "K8s": [
+      "raise"
+    ],
+    "K9s": [
+      "raise"
+    ],
+    "KTs": [
+      "raise"
+    ],
+    "KJs": [
+      "raise"
+    ],
+    "KQs": [
+      "raise"
+    ],
+    "Q2s": [
+      "raise"
+    ],
+    "Q3s": [
+      "raise"
+    ],
+    "Q4s": [
+      "raise"
+    ],
+    "Q5s": [
+      "raise"
+    ],
+    "Q6s": [
+      "raise"
+    ],
+    "Q7s": [
+      "raise"
+    ],
+    "Q8s": [
+      "raise"
+    ],
+    "Q9s": [
+      "raise"
+    ],
+    "QTs": [
+      "raise"
+    ],
+    "QJs": [
+      "raise"
+    ],
+    "J2s": [
+      "raise"
+    ],
+    "J3s": [
+      "raise"
+    ],
+    "J4s": [
+      "raise"
+    ],
+    "J5s": [
+      "raise"
+    ],
+    "J6s": [
+      "raise"
+    ],
+    "J7s": [
+      "raise"
+    ],
+    "J8s": [
+      "raise"
+    ],
+    "J9s": [
+      "raise"
+    ],
+    "JTs": [
+      "raise"
+    ],
+    "T5s": [
+      "raise"
+    ],
+    "T6s": [
+      "raise"
+    ],
+    "T7s": [
+      "raise"
+    ],
+    "T8s": [
+      "raise"
+    ],
+    "T9s": [
+      "raise"
+    ],
+    "95s": [
+      "raise"
+    ],
+    "96s": [
+      "raise"
+    ],
+    "97s": [
+      "raise"
+    ],
+    "98s": [
+      "raise"
+    ],
+    "85s": [
+      "raise"
+    ],
+    "86s": [
+      "raise"
+    ],
+    "87s": [
+      "raise"
+    ],
+    "75s": [
+      "raise"
+    ],
+    "76s": [
+      "raise"
+    ],
+    "64s": [
+      "raise"
+    ],
+    "65s": [
+      "raise"
+    ],
+    "54s": [
+      "raise"
+    ],
+    "A2o": [
+      "raise"
+    ],
+    "A3o": [
+      "raise"
+    ],
+    "A4o": [
+      "raise"
+    ],
+    "A5o": [
+      "raise"
+    ],
+    "A6o": [
+      "raise"
+    ],
+    "A7o": [
+      "raise"
+    ],
+    "A8o": [
+      "raise"
+    ],
+    "A9o": [
+      "raise"
+    ],
+    "ATo": [
+      "raise"
+    ],
+    "AJo": [
+      "raise"
+    ],
+    "AQo": [
+      "raise"
+    ],
+    "AKo": [
+      "raise"
+    ],
+    "K5o": [
+      "raise"
+    ],
+    "K6o": [
+      "raise"
+    ],
+    "K7o": [
+      "raise"
+    ],
+    "K8o": [
+      "raise"
+    ],
+    "K9o": [
+      "raise"
+    ],
+    "KTo": [
+      "raise"
+    ],
+    "KJo": [
+      "raise"
+    ],
+    "KQo": [
+      "raise"
+    ],
+    "Q8o": [
+      "raise"
+    ],
+    "Q9o": [
+      "raise"
+    ],
+    "QTo": [
+      "raise"
+    ],
+    "QJo": [
+      "raise"
+    ],
+    "J8o": [
+      "raise"
+    ],
+    "J9o": [
+      "raise"
+    ],
+    "JTo": [
+      "raise"
+    ],
+    "T8o": [
+      "raise"
+    ],
+    "T9o": [
+      "raise"
+    ],
+    "98o": [
+      "raise"
+    ],
+    "T4s": [
+      "raise_situational"
+    ],
+    "T3s": [
+      "raise_situational"
+    ],
+    "T2s": [
+      "raise_situational"
+    ],
+    "94s": [
+      "raise_situational"
+    ],
+    "93s": [
+      "raise_situational"
+    ],
+    "92s": [
+      "raise_situational"
+    ],
+    "84s": [
+      "raise_situational"
+    ],
+    "83s": [
+      "raise_situational"
+    ],
+    "82s": [
+      "raise_situational"
+    ],
+    "74s": [
+      "raise_situational"
+    ],
+    "73s": [
+      "raise_situational"
+    ],
+    "72s": [
+      "raise_situational"
+    ],
+    "63s": [
+      "raise_situational"
+    ],
+    "62s": [
+      "raise_situational"
+    ],
+    "53s": [
+      "raise_situational"
+    ],
+    "52s": [
+      "raise_situational"
+    ],
+    "43s": [
+      "raise_situational"
+    ],
+    "42s": [
+      "raise_situational"
+    ],
+    "32s": [
+      "raise_situational"
+    ],
+    "K4o": [
+      "raise_situational"
+    ],
+    "K3o": [
+      "raise_situational"
+    ],
+    "K2o": [
+      "raise_situational"
+    ],
+    "Q7o": [
+      "raise_situational"
+    ],
+    "Q6o": [
+      "raise_situational"
+    ],
+    "Q5o": [
+      "raise_situational"
+    ],
+    "Q4o": [
+      "raise_situational"
+    ],
+    "Q3o": [
+      "raise_situational"
+    ],
+    "Q2o": [
+      "raise_situational"
+    ],
+    "J7o": [
+      "raise_situational"
+    ],
+    "J6o": [
+      "raise_situational"
+    ],
+    "J5o": [
+      "raise_situational"
+    ],
+    "J4o": [
+      "raise_situational"
+    ],
+    "J3o": [
+      "raise_situational"
+    ],
+    "J2o": [
+      "raise_situational"
+    ],
+    "T7o": [
+      "raise_situational"
+    ],
+    "97o": [
+      "raise_situational"
+    ],
+    "87o": [
+      "raise_situational"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+export { setupPrimeVue } from './primevue'

@@ -1,0 +1,36 @@
+{
+  "id": "def-3bet-oop-12",
+  "title": "OOP vs 3bet 12%",
+  "position": "OOP",
+  "situation": "Defense vs 3Bet OOP",
+  "sourcePage": "GreenCharts2024_01-11.pdf",
+  "actions": [
+    {
+      "id": "call_3bet",
+      "label": "Колл 3-бета",
+      "color": "#2e7d32"
+    },
+    {
+      "id": "fourbet_fold_5bet",
+      "label": "4-бет, фолд на 5-бет",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "fourbet_call_5bet",
+      "label": "4-бет, колл 5-бет пуша",
+      "color": "#7b1fa2"
+    }
+  ],
+  "solution": {
+    "ATs": [
+      "fourbet_call_5bet"
+    ],
+    "A9s": [
+      "call_3bet",
+      "fourbet_fold_5bet"
+    ],
+    "K8s": [
+      "fourbet_fold_5bet"
+    ]
+  }
+}

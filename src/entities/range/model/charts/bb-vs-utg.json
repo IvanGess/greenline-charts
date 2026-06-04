@@ -1,0 +1,147 @@
+{
+  "id": "bb-vs-utg",
+  "title": "BB vs UTG",
+  "position": "BB",
+  "situation": "Big Blind Defense",
+  "sourcePage": "GreenCharts2024_01-7.pdf",
+  "actions": [
+    {
+      "id": "threebet",
+      "label": "3-бет",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "call",
+      "label": "Колл",
+      "color": "#2e7d32"
+    }
+  ],
+  "solution": {
+    "22": [
+      "call"
+    ],
+    "33": [
+      "call"
+    ],
+    "44": [
+      "call"
+    ],
+    "55": [
+      "call"
+    ],
+    "66": [
+      "call"
+    ],
+    "77": [
+      "call"
+    ],
+    "88": [
+      "call"
+    ],
+    "99": [
+      "call"
+    ],
+    "AA": [
+      "threebet"
+    ],
+    "KK": [
+      "threebet"
+    ],
+    "QQ": [
+      "threebet"
+    ],
+    "AKs": [
+      "threebet"
+    ],
+    "AQs": [
+      "threebet"
+    ],
+    "AJs": [
+      "threebet"
+    ],
+    "AKo": [
+      "threebet"
+    ],
+    "JJ": [
+      "call"
+    ],
+    "TT": [
+      "call"
+    ],
+    "ATs": [
+      "call"
+    ],
+    "A9s": [
+      "call"
+    ],
+    "A8s": [
+      "call"
+    ],
+    "A7s": [
+      "call"
+    ],
+    "A6s": [
+      "call"
+    ],
+    "A5s": [
+      "call"
+    ],
+    "A4s": [
+      "call"
+    ],
+    "A3s": [
+      "call"
+    ],
+    "A2s": [
+      "call"
+    ],
+    "KQs": [
+      "call"
+    ],
+    "KJs": [
+      "call"
+    ],
+    "KTs": [
+      "call"
+    ],
+    "K9s": [
+      "call"
+    ],
+    "QJs": [
+      "call"
+    ],
+    "QTs": [
+      "call"
+    ],
+    "JTs": [
+      "call"
+    ],
+    "T9s": [
+      "call"
+    ],
+    "98s": [
+      "call"
+    ],
+    "87s": [
+      "call"
+    ],
+    "76s": [
+      "call"
+    ],
+    "65s": [
+      "call"
+    ],
+    "54s": [
+      "call"
+    ],
+    "AQo": [
+      "call"
+    ],
+    "AJo": [
+      "call"
+    ],
+    "KQo": [
+      "call"
+    ]
+  }
+}

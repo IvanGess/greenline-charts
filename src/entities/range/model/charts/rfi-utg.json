@@ -1,0 +1,165 @@
+{
+  "id": "rfi-utg",
+  "title": "RFI — UTG (14%)",
+  "position": "UTG",
+  "situation": "Open Raise (RFI)",
+  "sourcePage": "GreenCharts2024_01-4.pdf",
+  "actions": [
+    {
+      "id": "raise",
+      "label": "Открываем всегда",
+      "color": "#d32f2f"
+    },
+    {
+      "id": "raise_situational",
+      "label": "Открываем в подходящих ситуациях",
+      "color": "#f9a825"
+    }
+  ],
+  "solution": {
+    "55": [
+      "raise_situational"
+    ],
+    "66": [
+      "raise_situational"
+    ],
+    "77": [
+      "raise"
+    ],
+    "88": [
+      "raise"
+    ],
+    "99": [
+      "raise"
+    ],
+    "AA": [
+      "raise"
+    ],
+    "KK": [
+      "raise"
+    ],
+    "QQ": [
+      "raise"
+    ],
+    "JJ": [
+      "raise"
+    ],
+    "TT": [
+      "raise"
+    ],
+    "A2s": [
+      "raise"
+    ],
+    "A3s": [
+      "raise"
+    ],
+    "A4s": [
+      "raise"
+    ],
+    "A5s": [
+      "raise"
+    ],
+    "A6s": [
+      "raise"
+    ],
+    "A7s": [
+      "raise"
+    ],
+    "A8s": [
+      "raise"
+    ],
+    "A9s": [
+      "raise"
+    ],
+    "ATs": [
+      "raise"
+    ],
+    "AJs": [
+      "raise"
+    ],
+    "AQs": [
+      "raise"
+    ],
+    "AKs": [
+      "raise"
+    ],
+    "K9s": [
+      "raise"
+    ],
+    "KTs": [
+      "raise"
+    ],
+    "KJs": [
+      "raise"
+    ],
+    "KQs": [
+      "raise"
+    ],
+    "QTs": [
+      "raise"
+    ],
+    "QJs": [
+      "raise"
+    ],
+    "JTs": [
+      "raise"
+    ],
+    "ATo": [
+      "raise"
+    ],
+    "AJo": [
+      "raise"
+    ],
+    "AQo": [
+      "raise"
+    ],
+    "AKo": [
+      "raise"
+    ],
+    "KJo": [
+      "raise"
+    ],
+    "KQo": [
+      "raise"
+    ],
+    "K8s": [
+      "raise_situational"
+    ],
+    "Q9s": [
+      "raise_situational"
+    ],
+    "J9s": [
+      "raise_situational"
+    ],
+    "T9s": [
+      "raise_situational"
+    ],
+    "98s": [
+      "raise_situational"
+    ],
+    "87s": [
+      "raise_situational"
+    ],
+    "76s": [
+      "raise_situational"
+    ],
+    "65s": [
+      "raise_situational"
+    ],
+    "54s": [
+      "raise_situational"
+    ],
+    "A9o": [
+      "raise_situational"
+    ],
+    "KTo": [
+      "raise_situational"
+    ],
+    "QTo": [
+      "raise_situational"
+    ],
+    "JTo": [
+      "raise_situational"
+    ]
+  }
+}
