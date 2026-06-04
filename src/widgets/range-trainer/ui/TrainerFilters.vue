@@ -1,5 +1,6 @@
 <template>
   <section class="trainer-filters">
+    <p class="trainer-filters__section-label">Фильтры</p>
     <div class="trainer-filters__grid">
       <FloatLabel variant="on" class="trainer-filters__field">
         <Select
@@ -100,12 +101,23 @@ function onRandomPositionToggle(value: unknown): void {
   background: var(--color-surface-elevated);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: var(--space-md);
+}
+
+.trainer-filters__section-label {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
 }
 
 .trainer-filters__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-md);
 }
 
@@ -129,6 +141,7 @@ function onRandomPositionToggle(value: unknown): void {
 @media (max-width: 1023px) {
   .trainer-filters {
     padding: var(--space-md);
+    position: static;
   }
 
   .trainer-filters__grid {
@@ -141,7 +154,6 @@ function onRandomPositionToggle(value: unknown): void {
     padding: var(--space-sm);
     border-radius: var(--radius-md);
     box-shadow: none;
-    border-color: rgb(0 0 0 / 6%);
   }
 
   .trainer-filters__grid {

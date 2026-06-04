@@ -1,6 +1,7 @@
 <template>
   <div id="range-trainer" class="range-trainer">
     <TrainerFilters
+      class="range-trainer__sidebar"
       :selected-position="selectedPosition"
       :selected-situation="selectedSituation"
       :position-options="positionOptions"
@@ -19,52 +20,54 @@
       @set-share="setBrushShare"
     />
 
-    <template v-if="currentChart">
-      <PositionTrainerPanel
-        v-if="isPositionMode"
-        :current-question="currentQuestion"
-        :position-answer-options="positionAnswerOptions"
-        :last-answer-correct="lastAnswerCorrect"
-        :expected-answer-labels="expectedAnswerLabels"
-        :asked-count="askedCount"
-        :correct-count="correctCount"
-        :position-accuracy="positionAccuracy"
-        :chart-position="currentChart.position"
-        :selected-position="selectedPosition"
-        @answer="answerPositionAction"
-      />
-
-      <div v-else class="range-trainer__grid-wrap">
-        <RangeGrid
-          :display-cells="displayCells"
-          :actions-by-id="actionsById"
-          :check-results="checkResultsForGrid"
-          :border-state="gridBorderState"
-          :highlight-errors="isReviewingSolution"
-          :readonly="gridReadonly"
-          @cell-click="paintCell"
+    <div class="range-trainer__content">
+      <template v-if="currentChart">
+        <PositionTrainerPanel
+          v-if="isPositionMode"
+          :current-question="currentQuestion"
+          :position-answer-options="positionAnswerOptions"
+          :last-answer-correct="lastAnswerCorrect"
+          :expected-answer-labels="expectedAnswerLabels"
+          :asked-count="askedCount"
+          :correct-count="correctCount"
+          :position-accuracy="positionAccuracy"
+          :chart-position="currentChart.position"
+          :selected-position="selectedPosition"
+          @answer="answerPositionAction"
         />
-        <div class="range-trainer__toolbar">
-          <template v-if="isAssignMode">
-            <Button label="Отменить" severity="secondary" outlined @click="cancelAssignMode" />
-            <Button
-              label="Сохранить"
-              icon="pi pi-save"
-              :disabled="!canSaveAssignedSolution"
-              @click="saveAssignedSolution"
-            />
-          </template>
-          <template v-else>
-            <Button :label="primaryButtonLabel" :icon="primaryButtonIcon" @click="onPrimaryAction" />
-            <Button label="Очистить" severity="secondary" outlined @click="clearAll" />
-          </template>
-        </div>
-      </div>
-    </template>
 
-    <Message v-else severity="warn" :closable="false">
-      Выберите чарт с непустым эталоном.
-    </Message>
+        <div v-else class="range-trainer__grid-wrap">
+          <RangeGrid
+            :display-cells="displayCells"
+            :actions-by-id="actionsById"
+            :check-results="checkResultsForGrid"
+            :border-state="gridBorderState"
+            :highlight-errors="isReviewingSolution"
+            :readonly="gridReadonly"
+            @cell-click="paintCell"
+          />
+          <div class="range-trainer__toolbar">
+            <template v-if="isAssignMode">
+              <Button label="Отменить" severity="secondary" outlined @click="cancelAssignMode" />
+              <Button
+                label="Сохранить"
+                icon="pi pi-save"
+                :disabled="!canSaveAssignedSolution"
+                @click="saveAssignedSolution"
+              />
+            </template>
+            <template v-else>
+              <Button :label="primaryButtonLabel" :icon="primaryButtonIcon" @click="onPrimaryAction" />
+              <Button label="Очистить" severity="secondary" outlined @click="clearAll" />
+            </template>
+          </div>
+        </div>
+      </template>
+
+      <Message v-else severity="warn" :closable="false">
+        Выберите чарт с непустым эталоном.
+      </Message>
+    </div>
   </div>
 </template>
 
@@ -152,6 +155,14 @@ defineExpose<RangeTrainerExpose>(exposedApi)
 
 <style scoped>
 .range-trainer {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.range-trainer__content {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
@@ -164,25 +175,35 @@ defineExpose<RangeTrainerExpose>(exposedApi)
   align-items: center;
   gap: var(--space-md);
   margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
 }
 
 .range-trainer__grid-wrap {
   width: 100%;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-md) var(--space-sm);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-md);
   background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 1023px) {
+  .range-trainer {
+    grid-template-columns: 240px 1fr;
+  }
 }
 
 @media (max-width: 767px) {
   .range-trainer {
+    grid-template-columns: 1fr;
     gap: var(--space-sm);
   }
 
   .range-trainer__grid-wrap {
-    padding: 0;
-    border-color: transparent;
-    background: transparent;
+    padding: var(--space-sm);
+    border-color: var(--color-border-subtle);
+    background: var(--color-surface-elevated);
   }
 
   .range-trainer__toolbar {

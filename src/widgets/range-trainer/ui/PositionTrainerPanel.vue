@@ -49,7 +49,23 @@
         }}
       </Message>
       <div class="position-trainer__footer">
-        <span class="position-trainer__stats">Верно {{ correctCount }}/{{ askedCount }} ({{ positionAccuracy }}%)</span>
+        <div class="position-trainer__stats">
+          <span class="position-trainer__stats-item">
+            <span class="position-trainer__stats-value">{{ correctCount }}</span>
+            <span class="position-trainer__stats-label">верно</span>
+          </span>
+          <span class="position-trainer__stats-divider">/</span>
+          <span class="position-trainer__stats-item">
+            <span class="position-trainer__stats-value">{{ askedCount }}</span>
+            <span class="position-trainer__stats-label">всего</span>
+          </span>
+          <span
+            class="position-trainer__stats-accuracy"
+            :class="{ 'position-trainer__stats-accuracy--good': positionAccuracy >= 80 }"
+          >
+            {{ positionAccuracy }}%
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -133,13 +149,13 @@ function cardStyle(suit: 's' | 'h' | 'd' | 'c'): Record<string, string> {
 function suitColor(suit: 's' | 'h' | 'd' | 'c'): string {
   switch (suit) {
     case 's':
-      return '#222222'
+      return '#1a1a1a'
     case 'd':
-      return '#184A91'
+      return '#0f3a7a'
     case 'h':
-      return '#781208'
+      return '#6b0e07'
     case 'c':
-      return '#288700'
+      return '#1a5c00'
   }
 }
 
@@ -169,9 +185,10 @@ function extractPrimarySeat(source: string | undefined): (typeof seats)[number] 
 .position-trainer {
   width: 100%;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
   background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-md);
 }
 
 .position-trainer__table {
@@ -191,8 +208,11 @@ function extractPrimarySeat(source: string | undefined): (typeof seats)[number] 
   position: absolute;
   inset: 1.75rem 0.75rem 1.5rem;
   border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #31682a 0%, #234f1f 70%);
-  border: 2px solid rgb(6 32 14 / 55%);
+  background: radial-gradient(circle at 30% 30%, #284f22 0%, #1a3a16 70%);
+  border: 2px solid rgb(0 0 0 / 55%);
+  box-shadow:
+    inset 0 2px 12px rgb(0 0 0 / 40%),
+    0 4px 16px rgb(0 0 0 / 50%);
 }
 
 .position-trainer__seat {
@@ -203,16 +223,19 @@ function extractPrimarySeat(source: string | undefined): (typeof seats)[number] 
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 999px;
-  border: 2px solid rgb(8 25 13 / 60%);
-  background: #88a96f;
-  color: #132f16;
-  font-size: 0.85rem;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface-soft);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .position-trainer__seat--active {
-  box-shadow: 0 0 0 3px rgb(255 229 122 / 45%);
-  border-color: #d6be54;
+  background: var(--color-accent);
+  color: #0c1810;
+  border-color: var(--color-accent-strong);
+  box-shadow: 0 0 0 3px var(--color-accent-glow), 0 0 12px var(--color-accent-glow);
 }
 
 .position-trainer__seat--ep {
@@ -257,14 +280,14 @@ function extractPrimarySeat(source: string | undefined): (typeof seats)[number] 
   position: relative;
   width: 5rem;
   height: 7rem;
-  border: 3px solid #060606;
+  border: 2px solid rgb(255 255 255 / 12%);
   border-radius: 8px;
   background: var(--card-fill);
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   padding: var(--space-sm);
-  box-shadow: 3px 4px 0 rgb(0 0 0 / 35%);
+  box-shadow: 3px 4px 12px rgb(0 0 0 / 60%);
 }
 
 .position-trainer__card-rank-corner {
@@ -275,7 +298,7 @@ function extractPrimarySeat(source: string | undefined): (typeof seats)[number] 
   font-weight: 700;
   color: #f3f6f8;
   line-height: 1;
-  text-shadow: 0 1px 0 rgb(0 0 0 / 50%);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 60%);
 }
 
 .position-trainer__card-suit-corner {
@@ -286,7 +309,7 @@ function extractPrimarySeat(source: string | undefined): (typeof seats)[number] 
   font-weight: 700;
   color: #f3f6f8;
   line-height: 1;
-  text-shadow: 0 1px 0 rgb(0 0 0 / 50%);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 60%);
 }
 
 .position-trainer__card-rank-main {
@@ -294,11 +317,11 @@ function extractPrimarySeat(source: string | undefined): (typeof seats)[number] 
   font-weight: 800;
   color: #f3f6f8;
   line-height: 1;
-  text-shadow: 0 1px 0 rgb(0 0 0 / 50%);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 60%);
 }
 
 .position-trainer__card-suit--red {
-  color: #f3f6f8;
+  color: #f3a0a0;
 }
 
 .position-trainer__question {
@@ -306,11 +329,12 @@ function extractPrimarySeat(source: string | undefined): (typeof seats)[number] 
   text-align: center;
   font-size: var(--font-size-lg);
   font-weight: 600;
+  color: var(--color-text);
 }
 
 .position-trainer__answers {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: var(--space-sm);
 }
 
@@ -321,20 +345,62 @@ function extractPrimarySeat(source: string | undefined): (typeof seats)[number] 
 .position-trainer__footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
 }
 
 .position-trainer__stats {
-  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
   font-size: var(--font-size-sm);
+}
+
+.position-trainer__stats-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25em;
+}
+
+.position-trainer__stats-value {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.position-trainer__stats-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.position-trainer__stats-divider {
+  color: var(--color-border);
+  font-size: var(--font-size-lg);
+}
+
+.position-trainer__stats-accuracy {
+  margin-left: var(--space-sm);
+  padding: 0.2em 0.6em;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: var(--font-size-md);
+  background: var(--color-surface-soft);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.position-trainer__stats-accuracy--good {
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, var(--color-surface-soft));
+  border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
 }
 
 @media (max-width: 767px) {
   .position-trainer {
     padding: var(--space-sm);
-    border-color: transparent;
-    background: transparent;
+    border-color: var(--color-border-subtle);
   }
 
   .position-trainer__seats-wrap {

@@ -1,5 +1,6 @@
 <template>
   <div class="brush-toolbar">
+    <p class="brush-toolbar__label">Кисть / доля</p>
     <div class="brush-toolbar__shares">
       <button
         type="button"
@@ -60,75 +61,82 @@ defineOptions({
   flex-direction: column;
   gap: var(--space-sm);
   padding: var(--space-md);
-  border: 1px dashed var(--color-border);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-surface-soft);
 }
 
+.brush-toolbar__label {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-text-muted);
+}
+
 .brush-toolbar__actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
+  flex-direction: column;
+  gap: var(--space-xs);
 }
 
 .brush-toolbar__shares {
-  display: flex;
-  gap: var(--space-sm);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xs);
 }
 
 .brush-share-btn {
-  min-width: 4rem;
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-xs) var(--space-sm);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-surface-elevated);
+  color: var(--color-text-muted);
   cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: border-color 0.15s, color 0.15s, box-shadow 0.15s;
 }
 
 .brush-share-btn--active {
   border-color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 12%, white);
+  color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent), inset 0 0 8px var(--color-accent-glow);
 }
 
 .brush-btn {
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  border: 2px solid var(--color-border);
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-surface-elevated);
+  color: var(--color-text);
   cursor: pointer;
   font: inherit;
   font-size: var(--font-size-sm);
-  min-height: 2.5rem;
+  min-height: 2.25rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .brush-btn--active {
   border-color: var(--brush-color);
-  box-shadow: 0 0 0 1px var(--brush-color);
+  box-shadow: 0 0 0 1px var(--brush-color), inset 0 0 10px color-mix(in srgb, var(--brush-color) 18%, transparent);
 }
 
 .brush-btn__swatch {
-  width: 1rem;
-  height: 1rem;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 2px;
   background: var(--brush-color);
+  flex-shrink: 0;
 }
 
 @media (max-width: 767px) {
   .brush-toolbar {
     padding: var(--space-sm);
-  }
-
-  .brush-toolbar__actions {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .brush-toolbar__shares {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .brush-btn {

@@ -28,8 +28,8 @@ defineOptions({
 .page-layout__header,
 .page-layout__footer {
   padding: var(--space-md) var(--space-lg);
-  background: rgb(255 255 255 / 86%);
-  backdrop-filter: blur(8px);
+  background: rgb(12 24 16 / 88%);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
 }
 

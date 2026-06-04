@@ -9,9 +9,10 @@ html {
   font-size: var(--font-size-md);
   color: var(--color-text);
   background:
-    radial-gradient(circle at top right, #e7f3ec 0%, transparent 38%),
-    radial-gradient(circle at top left, #eef7f2 0%, transparent 35%),
+    radial-gradient(ellipse at top right, #1a3d24 0%, transparent 45%),
+    radial-gradient(ellipse at bottom left, #112a18 0%, transparent 40%),
     var(--color-surface);
+  background-attachment: fixed;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }

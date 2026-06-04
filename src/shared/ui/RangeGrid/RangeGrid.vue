@@ -65,44 +65,58 @@ function updateCompression(): void {
   const grid = gridRef.value
   if (!grid) return
 
-  const viewportIsMobile = window.matchMedia('(max-width: 767px)').matches
-  if (!viewportIsMobile) {
-    isCompressed.value = false
-    return
-  }
-
+  const isMobile = window.matchMedia('(max-width: 767px)').matches
   const rootFontPx = Number.parseFloat(
     window.getComputedStyle(document.documentElement).fontSize,
   )
-  const cellPx = 2 * rootFontPx
-  const gapPx = 1
-  const borderPx = 1
-  const requiredWidth = cellPx * 13 + gapPx * 12 + borderPx * 2
 
-  const viewportWidth =
-    window.visualViewport?.width ?? document.documentElement.clientWidth ?? window.innerWidth
-  const sidePaddingPx = 8
-  const availableViewportWidth = Math.max(0, viewportWidth - sidePaddingPx * 2)
+  const cellRem = isMobile ? 2 : 3
+  const gapPx = isMobile ? 1 : 2
+  const borderPx = isMobile ? 1 : 2
+  const requiredWidth = cellRem * rootFontPx * 13 + gapPx * 12 + borderPx * 2
 
-  if (requiredWidth > availableViewportWidth) {
-    isCompressed.value = true
-    compressedWidthPx.value = Math.floor(availableViewportWidth)
-    return
+  // Measure the actual available container width excluding its own padding
+  const parent = grid.parentElement
+  let availableWidth: number
+  if (parent) {
+    const style = window.getComputedStyle(parent)
+    const paddingLeft = Number.parseFloat(style.paddingLeft) || 0
+    const paddingRight = Number.parseFloat(style.paddingRight) || 0
+    availableWidth = parent.clientWidth - paddingLeft - paddingRight
+  } else {
+    availableWidth = window.visualViewport?.width ?? document.documentElement.clientWidth ?? window.innerWidth
   }
 
-  isCompressed.value = false
-  compressedWidthPx.value = null
+  if (requiredWidth > availableWidth) {
+    isCompressed.value = true
+    compressedWidthPx.value = Math.floor(availableWidth)
+  } else {
+    isCompressed.value = false
+    compressedWidthPx.value = null
+  }
 }
+
+let resizeObserver: ResizeObserver | null = null
 
 onMounted(() => {
   updateCompression()
   window.addEventListener('resize', updateCompression)
   window.visualViewport?.addEventListener('resize', updateCompression)
+
+  // Also watch the parent container — it can resize independently of the viewport
+  // when the sidebar changes width (e.g. tablet breakpoint switches column sizes)
+  const parent = gridRef.value?.parentElement
+  if (parent && typeof ResizeObserver !== 'undefined') {
+    resizeObserver = new ResizeObserver(updateCompression)
+    resizeObserver.observe(parent)
+  }
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('resize', updateCompression)
   window.visualViewport?.removeEventListener('resize', updateCompression)
+  resizeObserver?.disconnect()
+  resizeObserver = null
 })
 </script>
 
@@ -121,9 +135,14 @@ onBeforeUnmount(() => {
   overflow: hidden;
 }
 
+/* Compressed mode works at any breakpoint, not just mobile */
+.range-grid--compressed {
+  grid-template-columns: repeat(13, minmax(0, 1fr));
+}
+
 .range-grid--success {
-  border-color: #2e7d32;
-  box-shadow: 0 0 0 4px rgb(46 125 50 / 28%);
+  border-color: var(--color-accent-strong);
+  box-shadow: 0 0 0 4px var(--color-accent-glow);
 }
 
 .range-grid--error {
@@ -136,10 +155,6 @@ onBeforeUnmount(() => {
     --cell-size-base: 2rem;
     gap: 1px;
     border-width: 1px;
-  }
-
-  .range-grid--compressed {
-    grid-template-columns: repeat(13, minmax(0, 1fr));
   }
 }
 </style>

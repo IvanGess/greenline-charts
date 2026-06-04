@@ -63,17 +63,14 @@ const title = computed(() => {
 
 function getDefaultCellBackground(label: string): string {
   if (label.length === 2 && label[0] === label[1]) {
-    // Диагональ: карманные пары
-    return '#bcc4bf'
+    return '#243830'
   }
 
   if (label.endsWith('s')) {
-    // Над диагональю: suited
-    return '#d2d9d5'
+    return '#1c2e24'
   }
 
-  // Под диагональю: offsuit
-  return '#e3e9e6'
+  return '#162218'
 }
 </script>
 
@@ -87,16 +84,21 @@ function getDefaultCellBackground(label: string): string {
   aspect-ratio: 1;
   padding: 0;
   border: 0;
-  border-radius: 4px;
+  border-radius: 3px;
   appearance: none;
   -webkit-appearance: none;
   outline: none;
-  box-shadow: inset 0 0 0 1px rgb(26 46 36 / 12%);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 6%);
   overflow: hidden;
   cursor: pointer;
   font: inherit;
   font-size: clamp(0.42rem, 1.25vw, 0.75rem);
   line-height: 1;
+  transition: box-shadow 0.1s;
+}
+
+.range-cell:hover:not(:disabled) {
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 20%);
 }
 
 .range-cell::after {
@@ -114,9 +116,10 @@ function getDefaultCellBackground(label: string): string {
 .range-cell__label {
   position: relative;
   z-index: 1;
-  color: #000;
-  text-shadow: none;
+  color: rgb(255 255 255 / 70%);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
   pointer-events: none;
+  font-weight: 600;
 }
 
 .range-cell--error {
@@ -125,7 +128,7 @@ function getDefaultCellBackground(label: string): string {
 
 .range-cell--error::after {
   inset: 0;
-  border-width: 3px;
-  border-color: #000;
+  border-width: 2px;
+  border-color: #ff4444;
 }
 </style>

@@ -1,8 +1,9 @@
 <template>
   <div class="page-header-bar">
     <div class="page-header-bar__brand">
-      <Menubar class="page-header-bar__menubar" :model="navItems" />
+      <span class="page-header-bar__logo" aria-hidden="true">◆</span>
       <h1 class="page-header-bar__title">{{ title }}</h1>
+      <Menubar class="page-header-bar__menubar" :model="navItems" />
     </div>
     <div v-if="$slots.actions" class="page-header-bar__actions">
       <slot name="actions" />
@@ -38,18 +39,26 @@ defineOptions({
 .page-header-bar__brand {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: var(--space-sm);
   min-width: 0;
+}
+
+.page-header-bar__logo {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px var(--color-accent-glow));
 }
 
 .page-header-bar__title {
   margin: 0;
   font-size: var(--font-size-lg);
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  order: 1;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
 }
 
 .page-header-bar__actions {
@@ -62,19 +71,13 @@ defineOptions({
   flex: 0 0 auto;
   border: none !important;
   box-shadow: none !important;
-  order: 2;
+  background: transparent !important;
 }
 
 .page-header-bar__menubar:deep(.p-menubar) {
   border: none !important;
   box-shadow: none !important;
-  overflow: visible;
-  position: relative;
-}
-
-:deep(.p-menubar.page-header-bar__menubar) {
-  border: none !important;
-  box-shadow: none !important;
+  background: transparent !important;
   overflow: visible;
   position: relative;
 }
@@ -96,14 +99,6 @@ defineOptions({
     width: max-content;
     min-width: max-content;
     z-index: 9999 !important;
-  }
-
-  .page-header-bar__menubar {
-    order: 1;
-  }
-
-  .page-header-bar__title {
-    order: 2;
   }
 }
 
