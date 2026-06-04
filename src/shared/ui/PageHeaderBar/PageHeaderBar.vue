@@ -79,17 +79,6 @@ defineOptions({
   position: relative;
 }
 
-:deep(.page-layout__header) {
-  position: relative;
-  z-index: 3500;
-  overflow: visible;
-}
-
-:deep(.page-layout__main) {
-  position: relative;
-  z-index: 1;
-}
-
 :deep(.page-header-bar__menubar .p-menubar-root-list),
 :deep(.page-header-bar__menubar .p-menubar-submenu) {
   width: max-content !important;
@@ -106,7 +95,7 @@ defineOptions({
     left: 0;
     width: max-content;
     min-width: max-content;
-    z-index: 3100 !important;
+    z-index: 9999 !important;
   }
 
   .page-header-bar__menubar {

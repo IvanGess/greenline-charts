@@ -33,6 +33,12 @@ defineOptions({
   border-bottom: 1px solid var(--color-border);
 }
 
+.page-layout__header {
+  position: relative;
+  z-index: 2000;
+  overflow: visible;
+}
+
 .page-layout__footer {
   border-bottom: none;
   border-top: 1px solid var(--color-border);
@@ -45,6 +51,8 @@ defineOptions({
   max-width: var(--content-max-width);
   margin-inline: auto;
   padding: var(--space-xl) var(--space-lg);
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 1023px) {

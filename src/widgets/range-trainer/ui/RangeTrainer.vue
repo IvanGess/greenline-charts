@@ -9,8 +9,12 @@
       :active-brush="activeBrush"
       :brush-share="brushShare"
       :show-brush-toolbar="Boolean(currentChart) && !isPositionMode"
+      :show-random-position-toggle="isPositionMode"
+      :random-position-enabled="randomPositionEnabled"
+      :position-select-disabled="isPositionSelectDisabled"
       @update:selected-position="selectedPosition = $event"
       @update:selected-situation="selectedSituation = $event"
+      @update:random-position-enabled="setRandomPositionEnabled"
       @toggle-action="toggleBrushAction"
       @set-share="setBrushShare"
     />
@@ -35,6 +39,7 @@
           :display-cells="displayCells"
           :actions-by-id="actionsById"
           :check-results="checkResultsForGrid"
+          :border-state="gridBorderState"
           :highlight-errors="isReviewingSolution"
           :readonly="gridReadonly"
           @cell-click="paintCell"
@@ -58,12 +63,14 @@
     </template>
 
     <Message v-else severity="warn" :closable="false">
-      Выберите чарт с непустым эталоном (заполните JSON по PDF).
+      Выберите чарт с непустым эталоном.
     </Message>
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 import Button from 'primevue/button'
 import Message from 'primevue/message'
 
@@ -79,7 +86,15 @@ defineOptions({
 })
 
 const session = useTrainerSession()
-const { selectedPosition, selectedSituation, positionOptions, situationOptions } = session.filters
+const {
+  selectedPosition,
+  selectedSituation,
+  positionOptions,
+  situationOptions,
+  randomPositionEnabled,
+  isPositionSelectDisabled,
+  setRandomPositionEnabled,
+} = session.filters
 const { currentChart, isPositionMode, isReviewingSolution } = session.modes
 const {
   displayCells,
@@ -90,7 +105,9 @@ const {
   activeBrush,
   brushShare,
   actionsById,
+  checkResults,
   checkResultsForGrid,
+  mistakeCount,
   setBrushShare,
   toggleBrushAction,
   paintCell,
@@ -115,6 +132,12 @@ const {
   correctCount,
   positionAccuracy,
 } = session.position
+
+const gridBorderState = computed<'success' | 'error' | null>(() => {
+  if (isPositionMode.value || isAssignMode.value) return null
+  if (!checkResults.value) return null
+  return mistakeCount.value === 0 ? 'success' : 'error'
+})
 
 const exposedApi: RangeTrainerExpose = {
   startAssignMode,

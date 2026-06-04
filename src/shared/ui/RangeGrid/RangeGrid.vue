@@ -2,7 +2,11 @@
   <div
     ref="gridRef"
     class="range-grid"
-    :class="{ 'range-grid--compressed': isCompressed }"
+    :class="{
+      'range-grid--compressed': isCompressed,
+      'range-grid--success': borderState === 'success',
+      'range-grid--error': borderState === 'error',
+    }"
     :style="gridStyle"
     role="grid"
     aria-label="Матрица рук"
@@ -33,6 +37,7 @@ defineProps<{
   displayCells: Record<HandKey, CellPaint>
   actionsById: Map<string, ChartAction>
   checkResults?: Record<HandKey, CellCheckResult> | null
+  borderState?: 'success' | 'error' | null
   highlightErrors?: boolean
   readonly?: boolean
 }>()
@@ -114,6 +119,16 @@ onBeforeUnmount(() => {
   border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
+}
+
+.range-grid--success {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 4px rgb(46 125 50 / 28%);
+}
+
+.range-grid--error {
+  border-color: #c62828;
+  box-shadow: 0 0 0 4px rgb(198 40 40 / 26%);
 }
 
 @media (max-width: 767px) {

@@ -6,17 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview",
-    "charts:render": "node scripts/render-pdf-pages.mjs",
-    "charts:import": "node scripts/import-charts-from-png.mjs",
-    "charts:rfi": "node scripts/build-charts-from-data.mjs"
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.0",
     "@types/node": "^25.9.1",
     "@vitejs/plugin-vue": "^6.0.7",
     "@vue/tsconfig": "^0.9.1",
-    "pdfjs-dist": "^6.0.227",
     "typescript": "~6.0.2",
     "vite": "^8.0.12",
     "vue-tsc": "^3.3.3"

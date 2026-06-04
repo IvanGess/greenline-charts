@@ -21,6 +21,8 @@ export function useTrainerSession() {
   const selectedSituation = ref<string>(allSituations[0] ?? '')
   const selectedPosition = ref<string>('')
   const mode = ref<TrainerMode>('ranges')
+  const randomPositionEnabled = ref(false)
+  const skipPositionRefreshOnChartChange = ref(false)
   const reviewView = ref<ReviewView>('solution')
   const situationOptions = computed(() => listSituations())
   const positionOptions = computed(() => listPositionsForSituation(selectedSituation.value))
@@ -64,7 +66,13 @@ export function useTrainerSession() {
     painter.userCells,
     painter.showCheck,
   )
-  const positionTrainer = usePositionTrainer(currentChart, selectedSituation)
+  const positionTrainer = usePositionTrainer(currentChart, selectedSituation, {
+    beforeNextHand: () => {
+      if (mode.value === 'position' && randomPositionEnabled.value) {
+        assignRandomPosition()
+      }
+    },
+  })
   const canStartAssignInCurrentView = computed(
     () => !(painter.showCheck.value && reviewView.value === 'solution'),
   )
@@ -87,7 +95,7 @@ export function useTrainerSession() {
     () => currentChart.value?.id,
     () => {
       assignMode.refreshForChartChange()
-      if (isPositionMode.value) {
+      if (isPositionMode.value && !skipPositionRefreshOnChartChange.value) {
         positionTrainer.refreshForChartChange()
       }
     },
@@ -211,6 +219,34 @@ export function useTrainerSession() {
     mode.value = 'ranges'
   }
 
+  const isPositionSelectDisabled = computed(
+    () => mode.value === 'position' && randomPositionEnabled.value,
+  )
+
+  function setRandomPositionEnabled(value: boolean): void {
+    randomPositionEnabled.value = value
+    if (value && mode.value === 'position') {
+      positionTrainer.nextPositionHand()
+    }
+  }
+
+  function assignRandomPosition(): void {
+    const options = positionOptions.value
+    if (!options.length) return
+    if (options.length === 1) {
+      selectedPosition.value = options[0]
+      return
+    }
+
+    const candidates = options.filter((option) => option !== selectedPosition.value)
+    const pool = candidates.length ? candidates : options
+    skipPositionRefreshOnChartChange.value = true
+    selectedPosition.value = pool[Math.floor(Math.random() * pool.length)]
+    queueMicrotask(() => {
+      skipPositionRefreshOnChartChange.value = false
+    })
+  }
+
   return {
     filters: {
       selectedPosition,
@@ -218,6 +254,9 @@ export function useTrainerSession() {
       positionOptions,
       situationOptions,
       filteredCharts,
+      randomPositionEnabled,
+      isPositionSelectDisabled,
+      setRandomPositionEnabled,
     },
     modes: {
       mode,
@@ -255,6 +294,8 @@ export function useTrainerSession() {
       switchToPositionMode,
       switchToRangeMode,
     },
-    position: positionTrainer,
+    position: {
+      ...positionTrainer,
+    },
   }
 }

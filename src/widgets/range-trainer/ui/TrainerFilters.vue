@@ -7,6 +7,7 @@
           :model-value="selectedPosition"
           :options="positionOptions"
           class="trainer-filters__input"
+          :disabled="positionSelectDisabled"
           @update:model-value="onPositionChange"
         />
         <label for="position_select">Позиция</label>
@@ -22,6 +23,15 @@
         <label for="situation_select">Ситуация</label>
       </FloatLabel>
     </div>
+    <label v-if="showRandomPositionToggle" class="trainer-filters__toggle">
+      <Checkbox
+        input-id="random_position_toggle"
+        :model-value="randomPositionEnabled"
+        binary
+        @update:model-value="onRandomPositionToggle"
+      />
+      <span>Рандомная позиция</span>
+    </label>
 
     <ActionBrushToolbar
       v-if="showBrushToolbar && actions.length"
@@ -35,6 +45,7 @@
 </template>
 
 <script setup lang="ts">
+import Checkbox from 'primevue/checkbox'
 import FloatLabel from 'primevue/floatlabel'
 import Select from 'primevue/select'
 
@@ -50,11 +61,15 @@ defineProps<{
   activeBrush: Set<string>
   brushShare: 50 | 25 | null
   showBrushToolbar: boolean
+  showRandomPositionToggle: boolean
+  randomPositionEnabled: boolean
+  positionSelectDisabled: boolean
 }>()
 
 const emit = defineEmits<{
   'update:selectedPosition': [value: string]
   'update:selectedSituation': [value: string]
+  'update:randomPositionEnabled': [value: boolean]
   'toggle-action': [actionId: string]
   'set-share': [value: 50 | 25]
 }>()
@@ -69,6 +84,10 @@ function onPositionChange(value: unknown): void {
 
 function onSituationChange(value: unknown): void {
   emit('update:selectedSituation', String(value ?? ''))
+}
+
+function onRandomPositionToggle(value: unknown): void {
+  emit('update:randomPositionEnabled', Boolean(value))
 }
 </script>
 
@@ -97,6 +116,14 @@ function onSituationChange(value: unknown): void {
 
 .trainer-filters__input {
   width: 100%;
+}
+
+.trainer-filters__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
 }
 
 @media (max-width: 1023px) {

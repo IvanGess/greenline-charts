@@ -18,7 +18,6 @@ export interface RangeChartDefinition {
   title: string
   position: PokerPosition | string
   situation: string
-  sourcePage?: string
   /** Порядок важен для легенды и разбиения ячейки. */
   actions: ChartAction[]
   solution: Record<HandKey, CellActions>

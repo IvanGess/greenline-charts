@@ -16,9 +16,14 @@ export interface PositionQuestion {
   handKey: HandKey
 }
 
+interface UsePositionTrainerOptions {
+  beforeNextHand?: () => void
+}
+
 export function usePositionTrainer(
   currentChart: ComputedRef<RangeChartDefinition | undefined>,
   selectedSituation: Ref<string>,
+  options?: UsePositionTrainerOptions,
 ) {
   const currentQuestion = ref<PositionQuestion | null>(null)
   const lastAnswerCorrect = ref<boolean | null>(null)
@@ -49,6 +54,7 @@ export function usePositionTrainer(
   }
 
   function nextPositionHand(): void {
+    options?.beforeNextHand?.()
     if (!currentChart.value) {
       currentQuestion.value = null
       return
