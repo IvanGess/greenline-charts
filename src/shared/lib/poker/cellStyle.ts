@@ -1,5 +1,11 @@
 import type { CellActions, CellPaint, ChartAction } from './types'
 
+/** 12.5% step (100/8) used for range-paint percentages. */
+export function roundCellPercent(value: number): number {
+  const STEP = 12.5
+  return Math.round(value / STEP) * STEP
+}
+
 export function actionsToGradient(
   paint: CellPaint,
   actionsById: Map<string, ChartAction>,
@@ -8,7 +14,7 @@ export function actionsToGradient(
   const entries = Object.entries(normalized)
 
   if (entries.length === 0) {
-    return 'var(--range-cell-empty, #eef2f0)'
+    return 'var(--range-cell-empty)'
   }
 
   const segments: Array<{ color: string; share: number }> = []
@@ -22,11 +28,11 @@ export function actionsToGradient(
   }
 
   if (segments.length === 0) {
-    return 'var(--range-cell-empty, #eef2f0)'
+    return 'var(--range-cell-empty)'
   }
 
   if (totalShare < 100) {
-    segments.push({ color: 'var(--range-cell-empty, #eef2f0)', share: 100 - totalShare })
+    segments.push({ color: 'var(--range-cell-empty)', share: 100 - totalShare })
   }
 
   let cursor = 0
@@ -49,7 +55,7 @@ export function normalizeCellPaint(paint: CellPaint): CellPaint {
   const out: CellPaint = {}
   for (const [id, value] of Object.entries(paint)) {
     if (typeof value !== 'number' || !Number.isFinite(value) || value <= 0) continue
-    out[id] = Math.min(100, roundStep(value))
+    out[id] = Math.min(100, roundCellPercent(value))
   }
   return out
 }
@@ -65,10 +71,4 @@ export function cellActionsEqual(a: CellActions, b: CellActions): boolean {
   const nb = [...normalizeCellActions(b)].sort()
   if (na.length !== nb.length) return false
   return na.every((id, i) => id === nb[i])
-}
-
-function roundStep(value: number): number {
-  // Поддержка 12.5% шагов: 100 / 8
-  const STEP = 12.5
-  return Math.round(value / STEP) * STEP
 }

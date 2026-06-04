@@ -145,7 +145,6 @@ const gridBorderState = computed<'success' | 'error' | null>(() => {
 const exposedApi: RangeTrainerExpose = {
   startAssignMode,
   canStartAssignMode: () => canStartAssignMode.value,
-  switchToCheckMode: switchToRangeMode,
   switchToRangeMode,
   switchToPositionMode,
 }

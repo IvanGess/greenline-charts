@@ -4,6 +4,7 @@ export {
   normalizeCellActions,
   normalizeCellPaint,
   paintToActions,
+  roundCellPercent,
 } from './cellStyle'
 export { actionsListToPaint, chartSolutionToPaintMap } from './solutionPaint'
 export { ALL_HAND_KEYS, HAND_MATRIX, buildHandMatrix } from './handMatrix'

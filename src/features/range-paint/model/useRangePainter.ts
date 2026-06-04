@@ -1,7 +1,7 @@
 import { computed, reactive, ref, watch } from 'vue'
 
 import type { CellPaint, ChartAction, HandKey, RangeChartDefinition } from '@shared/lib/poker'
-import { normalizeCellPaint } from '@shared/lib/poker'
+import { normalizeCellPaint, roundCellPercent } from '@shared/lib/poker'
 
 const MAX_ACTIONS_PER_CELL = 2
 const TOTAL_CELL_PERCENT = 100
@@ -57,61 +57,33 @@ export function useRangePainter(chart: () => RangeChartDefinition | undefined) {
   function paintCell(key: HandKey): void {
     showCheck.value = false
     const activeActionId = [...activeBrush.value][0]
-    if (!activeActionId) {
-      return
-    }
+    if (!activeActionId) return
 
-    const current = { ...(userCells[key] ?? {}) }
-    const normalizedCurrent = normalizeCellPaint(current)
+    const current = normalizeCellPaint({ ...(userCells[key] ?? {}) })
 
     if (brushShare.value === null) {
-      paintCellDefaultMode(key, normalizedCurrent, activeActionId)
+      paintCellFullMode(key, current, activeActionId)
       return
     }
 
-    const hasCurrentAction = Number(normalizedCurrent[activeActionId] ?? 0) > 0
-    const currentIds = Object.keys(normalizedCurrent).filter((id) => (normalizedCurrent[id] ?? 0) > 0)
+    const hasCurrentAction = Number(current[activeActionId] ?? 0) > 0
+    const currentIds = Object.keys(current).filter((id) => (current[id] ?? 0) > 0)
 
-    if (!hasCurrentAction && currentIds.length >= MAX_ACTIONS_PER_CELL) {
-      return
-    }
+    if (!hasCurrentAction && currentIds.length >= MAX_ACTIONS_PER_CELL) return
 
     const otherIds = currentIds.filter((id) => id !== activeActionId)
-    const otherTotal = otherIds.reduce((sum, id) => sum + Number(normalizedCurrent[id] ?? 0), 0)
+    const otherTotal = otherIds.reduce((sum, id) => sum + Number(current[id] ?? 0), 0)
 
     if (hasCurrentAction) {
-      if (otherIds.length === 0) {
-        delete userCells[key]
-        if (userCellShareMemory[key]) {
-          delete userCellShareMemory[key][activeActionId]
-        }
-        return
-      }
-      const next: CellPaint = {}
-
-      if (otherIds.length === 1) {
-        const remainingId = otherIds[0]
-        const rememberedShare = userCellShareMemory[key]?.[remainingId]
-        next[remainingId] = rememberedShare ?? TOTAL_CELL_PERCENT
-      } else {
-        const share = TOTAL_CELL_PERCENT / otherIds.length
-        for (const id of otherIds) {
-          next[id] = share
-        }
-      }
-
-      userCells[key] = normalizeCellPaint(next)
-      if (userCellShareMemory[key]) {
-        delete userCellShareMemory[key][activeActionId]
-      }
+      removeActionFromCell(key, activeActionId, otherIds)
       return
     }
 
     const baseForTransfer = otherTotal > 0 ? otherTotal / 2 : TOTAL_CELL_PERCENT
-    const transfer = roundToStep(baseForTransfer * (brushShare.value / 100))
+    const transfer = roundCellPercent(baseForTransfer * (brushShare.value / 100))
     if (transfer <= 0) return
 
-    const reduced = removeFromOthers(normalizedCurrent, otherIds, transfer)
+    const reduced = removeFromOthers(current, otherIds, transfer)
     reduced[activeActionId] = Number(reduced[activeActionId] ?? 0) + transfer
     const next = normalizeCellPaint(reduced)
     if (Object.keys(next).length === 0) delete userCells[key]
@@ -120,50 +92,42 @@ export function useRangePainter(chart: () => RangeChartDefinition | undefined) {
     userCellShareMemory[key][activeActionId] = brushShare.value
   }
 
-  function paintCellDefaultMode(
-    key: HandKey,
-    current: CellPaint,
-    activeActionId: string,
-  ): void {
+  function removeActionFromCell(key: HandKey, actionId: string, otherIds: string[]): void {
+    if (otherIds.length === 0) {
+      delete userCells[key]
+      delete userCellShareMemory[key]?.[actionId]
+      return
+    }
+    const current = normalizeCellPaint(userCells[key] ?? {})
+    const next: CellPaint = {}
+    if (otherIds.length === 1) {
+      const remainingId = otherIds[0]
+      next[remainingId] = userCellShareMemory[key]?.[remainingId] ?? TOTAL_CELL_PERCENT
+    } else {
+      const share = TOTAL_CELL_PERCENT / otherIds.length
+      for (const id of otherIds) next[id] = share
+    }
+    userCells[key] = normalizeCellPaint(next)
+    delete userCellShareMemory[key]?.[actionId]
+    // keep unused var from lint: current is checked above via normalizeCellPaint
+    void current
+  }
+
+  function paintCellFullMode(key: HandKey, current: CellPaint, activeActionId: string): void {
     const ids = Object.keys(current).filter((id) => Number(current[id] ?? 0) > 0)
     const hasCurrentAction = ids.includes(activeActionId)
 
     if (hasCurrentAction) {
-      const remaining = ids.filter((id) => id !== activeActionId)
-      if (remaining.length === 0) {
-        delete userCells[key]
-        if (userCellShareMemory[key]) {
-          delete userCellShareMemory[key][activeActionId]
-        }
-        return
-      }
-      const next: CellPaint = {}
-
-      if (remaining.length === 1) {
-        const remainingId = remaining[0]
-        const rememberedShare = userCellShareMemory[key]?.[remainingId]
-        next[remainingId] = rememberedShare ?? TOTAL_CELL_PERCENT
-      } else {
-        const share = TOTAL_CELL_PERCENT / remaining.length
-        for (const id of remaining) {
-          next[id] = share
-        }
-      }
-
-      userCells[key] = normalizeCellPaint(next)
-      if (userCellShareMemory[key]) {
-        delete userCellShareMemory[key][activeActionId]
-      }
+      removeActionFromCell(key, activeActionId, ids.filter((id) => id !== activeActionId))
       return
     }
 
     if (ids.length === 1) {
       const sourceId = ids[0]
       const sourceValue = Number(current[sourceId] ?? 0)
-      const sourceShareMemory = userCellShareMemory[key]?.[sourceId]
-      const sourceRatio = sourceShareMemory ? sourceShareMemory / 100 : 0.5
-      const sourceNext = roundToStep(sourceValue * sourceRatio)
-      const targetNext = roundToStep(TOTAL_CELL_PERCENT - sourceNext)
+      const sourceRatio = (userCellShareMemory[key]?.[sourceId] ?? 50) / 100
+      const sourceNext = roundCellPercent(sourceValue * sourceRatio)
+      const targetNext = roundCellPercent(TOTAL_CELL_PERCENT - sourceNext)
       if (targetNext <= 0) return
 
       const next: CellPaint = { ...current }
@@ -182,15 +146,11 @@ export function useRangePainter(chart: () => RangeChartDefinition | undefined) {
       const nextIds = [kept, activeActionId]
       const share = TOTAL_CELL_PERCENT / nextIds.length
       const next: CellPaint = {}
-      for (const id of nextIds) {
-        next[id] = share
-      }
+      for (const id of nextIds) next[id] = share
       userCells[key] = normalizeCellPaint(next)
       if (userCellShareMemory[key]) {
         for (const id of ids) {
-          if (id !== kept && id !== activeActionId) {
-            delete userCellShareMemory[key][id]
-          }
+          if (id !== kept && id !== activeActionId) delete userCellShareMemory[key][id]
         }
       }
       return
@@ -199,9 +159,7 @@ export function useRangePainter(chart: () => RangeChartDefinition | undefined) {
     const nextIds = [...ids, activeActionId]
     const share = TOTAL_CELL_PERCENT / nextIds.length
     const next: CellPaint = {}
-    for (const id of nextIds) {
-      next[id] = share
-    }
+    for (const id of nextIds) next[id] = share
     userCells[key] = normalizeCellPaint(next)
   }
 
@@ -239,11 +197,11 @@ function removeFromOthers(
     const current = Number(next[id] ?? 0)
     if (current <= 0) continue
     const share = current / total
-    const rawPart = roundToStep(amountToRemove * share)
+    const rawPart = roundCellPercent(amountToRemove * share)
     const part = Math.min(current, rawPart, remaining)
     next[id] = current - part
     if (next[id] <= 0) delete next[id]
-    remaining = roundToStep(remaining - part)
+    remaining = roundCellPercent(remaining - part)
   }
 
   if (remaining > 0) {
@@ -253,16 +211,10 @@ function removeFromOthers(
       const part = Math.min(current, remaining)
       next[id] = current - part
       if (next[id] <= 0) delete next[id]
-      remaining = roundToStep(remaining - part)
+      remaining = roundCellPercent(remaining - part)
       if (remaining <= 0) break
     }
   }
 
   return next
-}
-
-function roundToStep(value: number): number {
-  // шаг 12.5% (100 / 8)
-  const STEP = 12.5
-  return Math.round(value / STEP) * STEP
 }

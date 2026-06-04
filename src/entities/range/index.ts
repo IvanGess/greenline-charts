@@ -10,3 +10,4 @@ export {
   listSituations,
   overrideChartSolution,
 } from './model/chartCatalog'
+export { getPositionLabel, SITUATION_POSITION_ORDER } from './model/positionLabels'

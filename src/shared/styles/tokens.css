@@ -9,6 +9,7 @@
   --color-accent-glow: rgb(56 217 112 / 25%);
   --color-border: #243629;
   --color-border-subtle: #1c2d22;
+  --range-cell-empty: #162218;
 
   --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-size-sm: 0.875rem;
