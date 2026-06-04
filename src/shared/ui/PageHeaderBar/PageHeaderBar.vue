@@ -89,6 +89,11 @@ defineOptions({
 }
 
 @media (max-width: 960px) {
+  /* Burger appears before title: logo → burger → title */
+  .page-header-bar__logo    { order: 1; }
+  .page-header-bar__menubar { order: 2; }
+  .page-header-bar__title   { order: 3; }
+
   .page-header-bar__menubar:deep(.p-menubar-mobile .p-menubar-root-list),
   .page-header-bar__menubar:deep(.p-menubar-mobile-active .p-menubar-root-list),
   .page-header-bar__menubar:deep(.p-menubar-mobile .p-menubar-submenu),

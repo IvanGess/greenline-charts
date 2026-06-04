@@ -29,5 +29,11 @@ export function setupPrimeVue(app: App): void {
         darkModeSelector: '.app-dark',
       },
     },
+    zIndex: {
+      modal: 9100,
+      overlay: 9000,
+      menu: 9000,
+      tooltip: 9200,
+    },
   })
 }
